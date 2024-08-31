@@ -1,0 +1,35 @@
+---
+---
+@import "variable";
+@import "base";
+
+html, body {
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav {
+    background-color: #FFF;
+    padding: 10px $h-gutter;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    width: 100%;
+    min-height: 100px;
+}
+
+#cta {
+    background-color: $color-bg-m;
+    min-height: 200px;
+}
+
+#hero {
+    background-color: $color-gray;
+    min-height: 200px;
+    padding: 0 $h-gutter;
+}
