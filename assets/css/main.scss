@@ -19,11 +19,12 @@ nav {
 }
 
 nav ul {
+    display: flex;
+    flex-direction: row;
     list-style: none;
     text-transform: uppercase;
-}
-nav ul li {
-    display: inline-block;
+    justify-content: space-between;
+    flex: 1;
 }
 
 footer {
@@ -49,7 +50,12 @@ button.outline {
     flex-direction: row;
     background-color: $color-gray;
     min-height: 200px;
-    padding: 15px $h-gutter;
+    padding: 30px $h-gutter;
+}
+#hero img {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
 }
 
 #cta {
@@ -62,9 +68,10 @@ button.outline {
     flex-direction: column;
     background-color: #FFF;
     background-image: url(/assets/images/mire_1.png), url(/assets/images/mire_2.png);
-    background-position: left top, right bottom;
+    background-position: left 70px, right -110px;
     background-repeat: no-repeat;
-    min-height: 200px;
+    background-size: 175px, 175px;
+    min-height: 250px;
     align-items: center;
     justify-content: center;
 }
@@ -74,9 +81,54 @@ button.outline {
 #cta .bottom-content {
     background-color: $color-bg-m;
     min-height: 200px;
+    padding: 15px 1rem;
 }
 
 #cta .bottom-content img {
+    display: block;
     position: relative;
-    top: -20px;
+    top: -60px;
+    width: 200px;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+.color-c {
+    color: $color-c;
+}
+.color-m {
+    color: $color-m;
+}
+.color-y {
+    color: $color-y;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bottom-content .buttons-container {
+    margin: auto 0;
+    padding-bottom: 60px;
+}
+
+.container-col {
+    display: flex;
+    flex-direction: column;
+}
+.container-row {
+    display: flex;
+    flex-direction: row;
+}
+.container-row.centered-content {
+    align-items: center;
+    justify-content: center;
+}
+
+.container-item-1, .container-item-2, .container-col.col-1 {
+    flex: 1;
 }
