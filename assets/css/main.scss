@@ -8,7 +8,6 @@
 
 #hero {
     display: flex;
-    flex-direction: row;
     background-color: $color-gray;
     min-height: 200px;
     padding: 30px $h-gutter;
@@ -29,7 +28,7 @@
     flex-direction: column;
     background-color: #FFF;
     background-image: url(/assets/images/mire_1.png), url(/assets/images/mire_2.png);
-    background-position: left 70px, right -110px;
+    background-position: left calc(100% + 110px), right -110px;
     background-repeat: no-repeat;
     background-size: 175px, 175px;
     min-height: 250px;
@@ -119,4 +118,24 @@
 }
 .no-top-margin {
     margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .container-row:not(.responsive-row) {
+        flex-direction: column;
+    }
+    .buttons-container {
+        justify-content: initial;
+    }
+    #hero img {
+        width: 100%;
+    }
+    #cta .bottom-content img {
+        width: 200px;
+    }
+    #cta .top-content {
+        height: 400px;
+        background-position: left calc(100% + 80px), right -80px;
+        background-size: 130px, 130px;
+    }
 }

@@ -54,6 +54,7 @@ nav ul li {
     font-family: 'Montserrat';
     font-weight: bold;
     margin-right: 25px;
+    font-size: 0.9rem;
 }
 nav ul li:last-child {
     margin-right: 0px;
@@ -90,4 +91,8 @@ button.outline, a.button.outline {
 nav a {
     text-decoration: none;
     color: #000;
+}
+
+.button ~ .button {
+    margin-left: 25px;
 }
