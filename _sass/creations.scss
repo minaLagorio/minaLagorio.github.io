@@ -1,0 +1,28 @@
+#creations {
+    background-color: $color-bg-y;
+    padding: 0 $h-gutter;
+}
+
+.creations-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.creations-nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.creations-nav ul li {
+    font-family: 'Montserrat';
+    margin-right: 25px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.creations-nav ul li.active {
+    font-weight: bold;
+}

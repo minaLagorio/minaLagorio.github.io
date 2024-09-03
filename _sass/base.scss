@@ -1,3 +1,93 @@
-body {
-    background-color: $color-m;
+html, body {
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'LibreBodoni';
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+p, a, button, a.button {
+    font-family: 'Montserrat';
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, a.button {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a.button {
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+    padding: 10px $h-gutter;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+nav ul li {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-right: 25px;
+}
+nav ul li:last-child {
+    margin-right: 0px;
+}
+
+footer {
+    display: flex;
+    background-color: #000;
+    width: 100%;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+button, a.button {
+    border: 1px solid #000;
+    width: 260px;
+    background-color: #000;
+    color: $color-text-light;
+    height: 42px;
+    padding: 4px;
+    font-size: 0.8rem;
+}
+a.button {
+    line-height: 42px;
+    text-align: center;
+}
+button.outline, a.button.outline {
+    background-color: transparent;
+    color: #000;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
 }
