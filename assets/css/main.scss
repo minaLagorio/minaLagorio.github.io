@@ -18,6 +18,10 @@
     margin: 0 auto;
 }
 
+.logo-link {
+    line-height: 100px;
+}
+
 #cta {
     position: relative;
     min-height: 200px;
@@ -120,6 +124,18 @@
     margin-top: 0;
 }
 
+.link {
+    color: $color-m;
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: $v-spacing $h-gutter;
+}
+
 @media (max-width: 768px) {
     .container-row:not(.responsive-row) {
         flex-direction: column;
@@ -135,7 +151,40 @@
     }
     #cta .top-content {
         height: 400px;
+    }
+    #cta .top-content, #about .mire {
         background-position: left calc(100% + 80px), right -80px;
         background-size: 130px, 130px;
+    }
+    nav {
+        padding: 0;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        background-color: $color-bg-y;
+        top: $nav-height;
+        padding: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        z-index: 10;
+    }
+    .nav-menu li {
+        margin: 6px 0;
+        text-align: center;
+    }
+    .mobile-icon {
+        display: block;
+    }
+    #about {
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-link img {
+        width: 250px;
     }
 }
