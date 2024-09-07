@@ -67,7 +67,7 @@ footer {
     width: 100%;
     min-height: 100px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     z-index: 3;
 }
 
@@ -107,4 +107,27 @@ nav a {
     background-size: 20px;
     background-position: center;
     cursor: pointer;
+}
+
+footer a {
+    margin: 0 8px;
+}
+
+.image-link {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.image-link.linkedin {
+    background-image: url('/assets/images/linkedin.svg');
+}
+.image-link.malt {
+    background-image: url('/assets/images/malt.svg');
+}
+.image-link.behance {
+    background-image: url('/assets/images/behance.svg');
 }

@@ -6,6 +6,10 @@
 @import "creations";
 @import "apropos";
 
+.logo-link img {
+    width: 250px;
+}
+
 #hero {
     display: flex;
     background-color: $color-gray;
@@ -147,7 +151,7 @@
         width: 100%;
     }
     #cta .bottom-content img {
-        width: 200px;
+        width: 140px;
     }
     #cta .top-content {
         height: 400px;
@@ -157,7 +161,7 @@
         background-size: 130px, 130px;
     }
     nav {
-        padding: 0;
+        padding: 0 $h-gutter;
     }
     .nav-menu {
         display: none;
@@ -185,6 +189,6 @@
 
 @media (max-width: 480px) {
     .logo-link img {
-        width: 250px;
+        width: 175px;
     }
 }
