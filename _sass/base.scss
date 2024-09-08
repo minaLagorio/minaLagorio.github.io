@@ -31,10 +31,6 @@ button, a.button {
     text-transform: uppercase;
 }
 
-a.button {
-
-}
-
 nav {
     display: flex;
     flex-direction: row;
@@ -72,6 +68,9 @@ footer {
 }
 
 button, a.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #000;
     width: 260px;
     background-color: #000;

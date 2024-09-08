@@ -1,0 +1,13 @@
+#legals {
+    z-index: 1;
+    position: relative;
+    padding-bottom: 140px;
+    background-color: $color-gray;
+}
+
+#legals .content {
+    padding: 0 $h-gutter;
+    background-color: $color-gray;
+    z-index: 0;
+    border-top: 150px solid white;
+}

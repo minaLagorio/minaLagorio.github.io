@@ -5,6 +5,8 @@
 @import "base";
 @import "creations";
 @import "apropos";
+@import "contact";
+@import "legals";
 
 .logo-link img {
     width: 250px;
@@ -73,7 +75,6 @@
 .buttons-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 .bottom-content .buttons-container {
     margin: auto 0;
@@ -140,6 +141,27 @@
     padding: $v-spacing $h-gutter;
 }
 
+i.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin-bottom: 2px;
+    margin-right: 4px;
+}
+
+i.icon.linkedin {
+    @include linkedin-icon(black);
+}
+i.icon.behance {
+    @include behance-icon(black);
+}
+i.icon.malt {
+    @include malt-icon(black);
+}
+
 @media (max-width: 768px) {
     .container-row:not(.responsive-row) {
         flex-direction: column;
@@ -156,7 +178,7 @@
     #cta .top-content {
         height: 400px;
     }
-    #cta .top-content, #about .mire {
+    #cta .top-content, .mire {
         background-position: left calc(100% + 80px), right -80px;
         background-size: 130px, 130px;
     }
@@ -166,6 +188,7 @@
     .nav-menu {
         display: none;
         position: absolute;
+        left: 0;
         flex-direction: column;
         width: 100%;
         background-color: $color-bg-y;
@@ -184,6 +207,9 @@
     }
     #about {
         padding-bottom: 150px;
+    }
+    #about .content img, #contact .content img {
+        width: 140px;
     }
 }
 

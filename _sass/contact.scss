@@ -1,0 +1,31 @@
+#contact {
+    z-index: 1;
+    position: relative;
+    padding-bottom: 140px;
+    background-color: $color-bg-c;
+}
+
+#contact .right-content {
+    padding-top: 20px;
+}
+
+#contact .content {
+    padding: 0 $h-gutter;
+    background-color: $color-bg-c;
+    z-index: 0;
+    border-top: 150px solid white;
+}
+
+#contact .content img {
+    display: block;
+    position: relative;
+    align-self: flex-start;
+    width: 200px;
+    top: -60px;
+    padding: 5px;
+}
+
+#contact .button ~ .button {
+    margin-left: 0;
+    margin-top: 10px;
+}
