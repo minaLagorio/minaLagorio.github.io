@@ -36,6 +36,10 @@ linkedin_url: https://www.linkedin.com/in/jaquet-marina-creativite/
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-compress-images
+
+compress_images:
+  images_path: "assets/images/*.{gif,png,jpg,jpeg,svg}"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

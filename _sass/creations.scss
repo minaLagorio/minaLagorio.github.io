@@ -1,6 +1,6 @@
 #creations {
     background-color: $color-bg-y;
-    padding: 0 $h-gutter;
+    padding: 60px $h-gutter;
 }
 
 .creations-nav {
@@ -8,6 +8,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .creations-nav ul {
@@ -25,4 +26,20 @@
 }
 .creations-nav ul li.active {
     font-weight: bold;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.image-container {
+    margin: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
