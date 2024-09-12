@@ -23,8 +23,11 @@ const CREATION_MENU = {
 
 const DEFAULT_MENU = 'imprime';
 
-const LANDSCAPE_THRESHOLD = 1.3333;
-const PORTRAIT_THRESHOLD = 0.75;
+const BASE_WIDTH = 2979;
+const BASE_HEIGHT = 1458;
+
+const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
+const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
 
 window.onload = () => {
   /* Menu */
@@ -114,7 +117,9 @@ const loadCreationImages = async (id) => {
         grid[rowIndex][colIndex] = i + 1;
 
         if (r >= LANDSCAPE_THRESHOLD) {
+          console.log(`${id}_${i}.jpg landscape`);
           if (colIndex + 1 >= grid[rowIndex].length) {
+            console.log(`${id}_${i}.jpg skipped because outside of row`);
             continue;
           }
           if (grid[rowIndex][colIndex + 1] !== 0) {
