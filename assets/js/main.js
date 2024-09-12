@@ -74,7 +74,7 @@ const loadCreationImages = async (id) => {
 
   let grid = [[]];
 
-  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex + 1) / 3; rowIndex++) {
+  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex + 1) / 3 + 1; rowIndex++) {
     grid[rowIndex] = [0, 0, 0]; // 3 columns   
   }
 
@@ -117,9 +117,7 @@ const loadCreationImages = async (id) => {
         grid[rowIndex][colIndex] = i + 1;
 
         if (r >= LANDSCAPE_THRESHOLD) {
-          console.log(`${id}_${i}.jpg landscape`);
           if (colIndex + 1 >= grid[rowIndex].length) {
-            console.log(`${id}_${i}.jpg skipped because outside of row`);
             continue;
           }
           if (grid[rowIndex][colIndex + 1] !== 0) {
@@ -144,6 +142,8 @@ const loadCreationImages = async (id) => {
           imgContainer.style.gridRowStart = rowIndex + 1;
           imgContainer.style.gridRowEnd = `span 2`;
           imgContainer.style.gridColumnStart = colIndex + 1;
+        } else {
+          // imgContainer.style.aspectRatio = 1;
         }
 
         break;

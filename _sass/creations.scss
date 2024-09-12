@@ -30,7 +30,8 @@
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 30vw);
+    grid-auto-rows: 30vw;
     gap: 15px;
 }
 

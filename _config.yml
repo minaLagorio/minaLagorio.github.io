@@ -41,6 +41,9 @@ plugins:
 compress_images:
   images_path: "assets/images/*.{gif,png,jpg,jpeg,svg}"
 
+imageoptim:
+  svgo: false
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -60,3 +63,5 @@ compress_images:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - _compress_images_cache.yml
