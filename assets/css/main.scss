@@ -36,7 +36,16 @@
 }
 
 .nav-menu li a.active {
-    text-decoration: underline;
+    border-bottom: solid 3px black;
+}
+.nav-menu li a.active.color-c {
+    border-color: $color-c;
+}
+.nav-menu li a.active.color-m {
+    border-color: $color-m;
+}
+.nav-menu li a.active.color-y {
+    border-color: $color-y;
 }
 
 #cta .top-content {
@@ -230,6 +239,11 @@ i.icon.malt {
     }
     #blog .post-list {
         grid-template-columns: 100%;
+    }
+
+    #creations .creations-nav ul {
+        flex-direction: column;
+        padding: 0;
     }
 }
 

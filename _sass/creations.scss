@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     list-style: none;
     text-transform: uppercase;
+    padding: 0;
 }
 
 .creations-nav ul li {
@@ -32,9 +33,9 @@
 .image-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 30%);
-    grid-auto-rows: 30vw;
-    gap: 15px;
+    grid-template-columns: repeat(3, calc(33vw - 25px));
+    grid-auto-rows: calc(33vw - 25px);
+    gap: 10px;
 }
 
 .image-container {
