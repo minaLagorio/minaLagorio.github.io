@@ -74,7 +74,8 @@ const loadCreationImages = async (id) => {
 
   let grid = [[]];
 
-  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex + 1) / 3 + 1; rowIndex++) {
+  // + 3 to give enough rows for placing images
+  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex / 3) + 3; rowIndex++) {
     grid[rowIndex] = [0, 0, 0]; // 3 columns   
   }
 
@@ -113,9 +114,6 @@ const loadCreationImages = async (id) => {
           continue;
         }
 
-        placed = true;
-        grid[rowIndex][colIndex] = i + 1;
-
         if (r >= LANDSCAPE_THRESHOLD) {
           if (colIndex + 1 >= grid[rowIndex].length) {
             continue;
@@ -124,6 +122,9 @@ const loadCreationImages = async (id) => {
             continue;
           }
 
+          placed = true;
+
+          grid[rowIndex][colIndex] = i + 1;
           grid[rowIndex][colIndex + 1] = i + 1;
 
           imgContainer.style.gridRowStart = rowIndex + 1;
@@ -137,13 +138,17 @@ const loadCreationImages = async (id) => {
             continue;
           }
 
+          placed = true;
+
+          grid[rowIndex][colIndex] = i + 1;
           grid[rowIndex + 1][colIndex] = i + 1;
 
           imgContainer.style.gridRowStart = rowIndex + 1;
           imgContainer.style.gridRowEnd = `span 2`;
           imgContainer.style.gridColumnStart = colIndex + 1;
         } else {
-          // imgContainer.style.aspectRatio = 1;
+          placed = true;
+          grid[rowIndex][colIndex] = i + 1;
         }
 
         break;
