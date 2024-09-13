@@ -12,7 +12,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 ## Revenons sur les traits de coupe et les fonds perdus.
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TC.jpg", | relative_url }}" />
+        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TC.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Traits de coupe</h3>
@@ -24,7 +24,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_FP_TC.jpg", | relative_url }}" />
+        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_FP_TC.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Fonds perdus</h3>
@@ -36,7 +36,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg", | relative_url }}" />
+        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <p>
@@ -48,7 +48,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_SANS_FP_CAR_B.jpg", | relative_url }}" />
+        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_SANS_FP_CAR_B.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <p>
@@ -60,7 +60,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 ## Usage caché des traits de coupe en offset
 <div class="container">
     <div>
-        <img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg", | relative_url }}" />
+        <img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg" | relative_url }}" />
     </div>
     <div>
         <p>
@@ -79,4 +79,4 @@ Pensez à la marge intérieure pour sécuriser votre design des plis et de la co
 Les traits de coupes ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
 <span class="text-color-m">—-----</span> : coupe du format fini 
 
-<img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg", | relative_url }}" />
+<img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg" | relative_url }}" />
