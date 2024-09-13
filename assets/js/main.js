@@ -114,6 +114,8 @@ const loadCreationImages = async (id) => {
 
     const r = imageSize.width / imageSize.height;
 
+    imageGridElt.appendChild(imgContainer);
+
     let placed = false;
     for(let rowIndex = 0; rowIndex < grid.length; rowIndex++) {
       if (placed) {
@@ -165,11 +167,9 @@ const loadCreationImages = async (id) => {
 
         break;
       }
+
+      imgContainer.appendChild(img);
     }
-
-    imgContainer.appendChild(img);
-
-    imageGridElt.appendChild(imgContainer);
   }
 };
 
