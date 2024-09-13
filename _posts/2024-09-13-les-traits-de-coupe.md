@@ -34,7 +34,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
     </div>
 </div>
 
-<div class="container">
+<div class="container container-row centered-content">
     <div>
         <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg", | relative_url }}" />
     </div>
@@ -58,11 +58,11 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 </div>
 
 ## Usage caché des traits de coupe en offset
-<div class="container container-row centered-content">
+<div class="container">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg", | relative_url }}" />
+        <img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg", | relative_url }}" />
     </div>
-    <div class="container-item-1">
+    <div>
         <p>
             Les mires ou les traits de coupe, en imprimerie, ont une couleur noire. C’est un noir de repérage. C'est-à-dire que ce noir est constitué de cyan, de magenta, de jaune et de noir. Dans les industries graphiques, les marques de repérage servent au conducteur offset pour correctement caler les 4 plaques nécessaires à l’impression.
         </p>
@@ -70,14 +70,13 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
 </div>
 
 ## Les recommandations pratiques
-Prenez le réflexe d’ajouter les fonds perdus même lorsque ceux-ci ne sont pas nécessaires.
+Prenez le réflexe d’ajouter les fonds perdus même lorsque ceux-ci ne sont pas nécessaires.<br/>
+<span class="text-color-c">—-----</span> : 3 à 5 mm de fonds perdus
 
-—----- : 3 à 5 mm de fonds perdus
+Pensez à la marge intérieure pour sécuriser votre design des plis et de la coupe.<br/>
+<span class="text-color-y">—-----</span> : Marge de sécurité d’au moins 4mm
 
-Pensez à la marge intérieure pour sécuriser votre design des plis et de la coupe.
+Les traits de coupes ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
+<span class="text-color-m">—-----</span> : coupe du format fini 
 
-—----- : Marge de sécurité d’au moins 4mm
-
-Les traits de coupes ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.
-
-—----- : coupe du format fini 
+<img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg", | relative_url }}" />
