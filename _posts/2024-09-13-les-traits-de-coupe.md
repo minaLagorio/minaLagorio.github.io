@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Les Traits de Coupe"
+title: "Traits de Coupe"
 description: "Ces traits font partie des repères que nous retrouvons sur des fichiers destinés à l’impression. À quoi servent-ils ? Vont-ils être visibles sur l’ouvrage final ?"
 thumbnail_url: "/assets/images/posts/les-traits-de-coupe/thumbnail.jpg"
 ---
