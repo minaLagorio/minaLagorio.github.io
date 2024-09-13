@@ -34,7 +34,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
     </div>
 </div>
 
-<div class="container container-row centered-content">
+<div class="container">
     <div>
         <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg", | relative_url }}" />
     </div>

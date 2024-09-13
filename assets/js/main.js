@@ -110,6 +110,8 @@ const loadCreationImages = async (id) => {
 
     const img = images[i];
 
+    imgContainer.appendChild(img);
+
     const imageSize = await getImageSize(img.src);
 
     const r = imageSize.width / imageSize.height;
@@ -168,7 +170,6 @@ const loadCreationImages = async (id) => {
         break;
       }
 
-      imgContainer.appendChild(img);
     }
   }
 };
