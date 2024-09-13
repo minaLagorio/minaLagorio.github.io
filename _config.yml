@@ -31,6 +31,18 @@ github_username:  jekyll
 behance_url: https://www.behance.net/marina_creativite
 malt_url: https://www.malt.fr/profile/marinacreativite
 linkedin_url: https://www.linkedin.com/in/jaquet-marina-creativite/
+navigation:
+  - text: "Mes créations"
+    url: /creations
+    color: "color-y"
+  - text: "Qui suis-je"
+    url: /apropos
+    color: "color-m"
+  - text: "Me contacter"
+    url: /contact
+    color: "color-c"
+  - text: "Blog"
+    url: /blog
 
 # Build settings
 theme: minima
@@ -39,7 +51,7 @@ plugins:
   - jekyll-compress-images
 
 compress_images:
-  images_path: "assets/images/*.{gif,png,jpg,jpeg,svg}"
+  images_path: "assets/images/**/*.{gif,png,jpg,jpeg,svg}"
 
 imageoptim:
   svgo: false

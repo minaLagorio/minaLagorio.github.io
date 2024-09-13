@@ -1,6 +1,26 @@
 ---
 layout: page
 ---
+{% assign featured_post = site.posts[0] %}
 <section id="blog">
-
+    {% if featured_post %}
+        <div class="block-link featured container-row centered-content" data-url="{{ featured_post.url }}">
+            <img class="container-item-1" src="{{ featured_post.thumbnail_url }}" />
+            <div class="container-item-2">
+                <h1>{{ featured_post.title }}</h1>
+                <p>{{ featured_post.description }}</p>
+                <a href="{{ featured_post.url }}" class="button">Lire l'article</a>
+            </div>
+        </div>
+    {% endif %}
+    <ul class="post-list">
+        {% for post in site.posts offset:1 %}
+            <li class="block-link" data-url="{{ post.url }}">
+                <img src="{{ post.thumbnail_url }}" />
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <a class="button outline" href="{{ post.url }}">Lire l'article</a>
+            </li>
+        {% endfor %}
+    </ul>
 </section>

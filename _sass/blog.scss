@@ -1,0 +1,29 @@
+#blog .featured img {
+    display: block;
+    width: 200px;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+#blog .featured {
+    background-color: $color-gray;
+    padding: 20px $h-gutter;
+}
+
+#blog .featured h1 {
+    margin-bottom: 40px;
+}
+
+#blog .post-list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 30%);
+    list-style: none;
+    padding: 0 $h-gutter;
+}
+
+#blog .post-list img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}

@@ -63,6 +63,18 @@ window.onload = () => {
     }
   }
   /*************/
+
+  /* Blog */
+  const blockLinks = document.querySelectorAll('.block-link');
+
+  for (const b of blockLinks) {
+    b.addEventListener('click', function(e) {
+      if (this.dataset.url) {
+        window.location.href = this.dataset.url;
+      }
+    });
+  }
+  /********/
 }
 
 const loadCreationImages = async (id) => {

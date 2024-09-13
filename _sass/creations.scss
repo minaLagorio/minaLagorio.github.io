@@ -14,6 +14,7 @@
 .creations-nav ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
     text-transform: uppercase;
 }
@@ -30,7 +31,8 @@
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 30vw);
+    justify-content: center;
+    grid-template-columns: repeat(3, 30%);
     grid-auto-rows: 30vw;
     gap: 15px;
 }

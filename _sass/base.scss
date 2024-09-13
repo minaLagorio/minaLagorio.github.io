@@ -130,3 +130,13 @@ footer a {
 .image-link.behance {
     background-image: url('/assets/images/behance.svg');
 }
+
+.block-link {
+    cursor: pointer;
+}
+
+.post-content {
+    padding: 0 $h-gutter;
+    max-width: 780px;
+    margin: 0 auto;
+}

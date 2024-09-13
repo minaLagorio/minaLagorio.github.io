@@ -8,6 +8,7 @@
 @import "contact";
 @import "legals";
 @import "blog";
+@import "post";
 
 .logo-link img {
     width: 250px;
@@ -32,6 +33,10 @@
 #cta {
     position: relative;
     min-height: 200px;
+}
+
+.nav-menu li a.active {
+    text-decoration: underline;
 }
 
 #cta .top-content {
@@ -214,6 +219,17 @@ i.icon.malt {
     }
     #about .content img, #contact .content img {
         width: 140px;
+    }
+
+    #blog .featured img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #blog .post-list img {
+        max-height: initial;
+    }
+    #blog .post-list {
+        grid-template-columns: 100%;
     }
 }
 

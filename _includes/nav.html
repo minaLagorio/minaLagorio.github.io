@@ -4,9 +4,12 @@
     </a>
     <div class="mobile-icon hidden"></div>
     <ul class="nav-menu">
-        <li><a href="/creations" class="color-y">Mes créations</a></li>
-        <li><a href="/apropos" class="color-m">Qui suis-je</a></li>
-        <li><a href="/contact" class="color-c">Me contacter</a></li>
-        <li><a href="/blog">Blog</a></li>
+        {% for link in site.navigation %}
+            {% assign active = '' %}
+            {% if page.url contains link.url %}
+                {% assign active = 'active' %}
+            {% endif %}
+            <li><a href="{{ link.url }}" class="{{ active }} {{ link.color }}">{{ link.text }}</a></li>
+        {% endfor %}
     </ul>
 </nav>
