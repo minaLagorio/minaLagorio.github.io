@@ -5,9 +5,9 @@ description: "Ces traits font partie des repères que nous retrouvons sur des fi
 thumbnail_url: "/assets/images/posts/les-traits-de-coupe/thumbnail.jpg"
 ---
 
-Ces traits font partie des repères que nous retrouvons sur des fichiers destinés à l’impression. À quoi servent-ils ? Vont-ils être visibles sur l’ouvrage final ?
+Ces traits font partie des __repères__ que nous retrouvons sur des fichiers destinés à l’impression. À quoi servent-ils ? Vont-ils être visibles sur l’ouvrage final ?
 
-En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déroulé d’impression d'un projet.
+En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon déroulé d’impression d'un projet.
 
 ## Revenons sur les traits de coupe et les fonds perdus.
 <div class="container container-row centered-content">
@@ -17,7 +17,7 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
     <div class="container-item-1">
         <h3>Traits de coupe</h3>
         <p>
-            À ne pas confondre avec les traits de fonds perdus, les traits de coupe sont des marques noires dans les coins du fichier d’impression. Ils servent au moment du façonnage pour couper le document aux bonnes dimensions.
+            À ne pas confondre avec les traits de fonds perdus, les traits de coupe sont des marques noires dans les coins du fichier d’impression. Ils servent au moment du <b>façonnage</b> pour couper le document aux bonnes dimensions.
         </p>
     </div>
 </div>
@@ -40,8 +40,8 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
     </div>
     <div class="container-item-1">
         <p>
-            Vous avez mis un élément graphique ou une couleur en arrière-plan ?
-            Pensez aux fonds perdus si vous voulez éviter les bords blancs non désirés sur votre format fini.
+            Vous avez mis un élément <b>graphique</b> ou une couleur en arrière-plan ?
+            Pensez aux fonds perdus si vous voulez éviter les bords blancs non désirés sur votre <b>format fini</b>.
         </p>
     </div>
 </div>
@@ -64,19 +64,19 @@ En imprimerie, il ne faut pas oublier certaines choses nécessaires au bon déro
     </div>
     <div>
         <p>
-            Les mires ou les traits de coupe, en imprimerie, ont une couleur noire. C’est un noir de repérage. C'est-à-dire que ce noir est constitué de cyan, de magenta, de jaune et de noir. Dans les industries graphiques, les marques de repérage servent au conducteur offset pour correctement caler les 4 plaques nécessaires à l’impression.
+            Les <b>mires</b> ou les traits de coupe, en imprimerie, ont une couleur noire. C’est un noir de <b>repérage</b>. C'est-à-dire que ce noir est constitué de cyan, de magenta, de jaune et de noir. Dans les <b>industries graphiques</b>, les marques de <b>repérage</b> servent au conducteur offset pour correctement caler les 4 plaques nécessaires à l’impression.
         </p>
     </div>
 </div>
 
 ## Les recommandations pratiques
-Prenez le réflexe d’ajouter les fonds perdus même lorsque ceux-ci ne sont pas nécessaires.<br/>
+Prenez le réflexe d’__ajouter les fonds perdus__ même lorsque ceux-ci ne sont pas nécessaires.<br/>
 <span class="text-color-c">—-----</span> : 3 à 5 mm de fonds perdus
 
-Pensez à la marge intérieure pour sécuriser votre design des plis et de la coupe.<br/>
+Pensez à la __marge intérieure__ pour sécuriser votre design des plis et de la coupe.<br/>
 <span class="text-color-y">—-----</span> : Marge de sécurité d’au moins 4mm
 
-Les traits de coupes ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
+Les __traits de coupes__ ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
 <span class="text-color-m">—-----</span> : coupe du format fini 
 
 <img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg" | relative_url }}" />
