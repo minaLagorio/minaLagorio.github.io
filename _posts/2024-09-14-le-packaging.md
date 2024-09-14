@@ -2,7 +2,8 @@
 layout: post
 title: "Le packaging"
 description: "À la croisée des chemins entre le design d’objet et le design graphique, un packaging bien fait sait faire parler de lui."
-thumbnail_url: "/assets/images/posts/le-packaging/thumbnail.jpg"
+image: "/assets/images/posts/le-packaging/thumbnail.jpg"
+author: Marina Créativité
 ---
 
 À la croisée des chemins entre le __design d’objet__ et le __design graphique__, un packaging bien fait sait faire parler de lui.

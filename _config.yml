@@ -18,19 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jaquet Marina Créativité
+title: Marina Créativité
 email: pao@marina-creativite.fr
+tagline: Designer Graphique
+logo: /assets/logo.svg
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+  Que ce soit votre logo, votre charte graphique ou autres supports de communication, je m'occupe de vos fichiers qu'ils soient pour l’imprimés ou le numériques.
+baseurl: "/" # the subpath of your site, e.g. /blog
+author: Marina Jaquet
+url: "https://marina-creativite.fr" # the base hostname & protocol for your site, e.g. http://example.com
 behance_url: https://www.behance.net/marina_creativite
 malt_url: https://www.malt.fr/profile/marinacreativite
 linkedin_url: https://www.linkedin.com/in/jaquet-marina-creativite/
+social:
+  name: Marina Jaquet
+  links:
+    - https://www.behance.net/marina_creativite
+    - https://www.malt.fr/profile/marinacreativite
+    - https://www.linkedin.com/in/jaquet-marina-creativite/
+locale: fr_FR
 navigation:
   - text: "Mes créations"
     url: /creations
@@ -49,6 +55,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-compress-images
+  - jekyll-seo-tag
 
 compress_images:
   images_path: "assets/images/**/*.{gif,png,jpg,jpeg,svg}"

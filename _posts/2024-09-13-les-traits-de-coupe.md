@@ -2,7 +2,8 @@
 layout: post
 title: "Traits de Coupe"
 description: "Ces traits font partie des repères que nous retrouvons sur des fichiers destinés à l’impression. À quoi servent-ils ? Vont-ils être visibles sur l’ouvrage final ?"
-thumbnail_url: "/assets/images/posts/les-traits-de-coupe/thumbnail.jpg"
+image: "/assets/images/posts/les-traits-de-coupe/thumbnail.jpg"
+author: Marina Créativité
 ---
 
 Ces traits font partie des __repères__ que nous retrouvons sur des fichiers destinés à l’impression. À quoi servent-ils ? Vont-ils être visibles sur l’ouvrage final ?
@@ -12,7 +13,7 @@ En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon d
 ## Revenons sur les traits de coupe et les fonds perdus.
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TC.jpg" | relative_url }}" />
+        <img alt="Image de trait de coupe" class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TC.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Traits de coupe</h3>
@@ -24,7 +25,7 @@ En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon d
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_FP_TC.jpg" | relative_url }}" />
+        <img alt="Image de fonds perdus" class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_FP_TC.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Fonds perdus</h3>
@@ -36,7 +37,7 @@ En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon d
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg" | relative_url }}" />
+        <img alt="Image de fonds perdus" class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_TB.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <p>
@@ -48,7 +49,7 @@ En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon d
 
 <div class="container container-row centered-content">
     <div>
-        <img class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_SANS_FP_CAR_B.jpg" | relative_url }}" />
+        <img alt="Image fond blanc" class="medium" src="{{"/assets/images/posts/les-traits-de-coupe/IMAGE_SANS_FP_CAR_B.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <p>
@@ -60,7 +61,7 @@ En __imprimerie__, il ne faut pas oublier certaines choses nécessaires au bon d
 ## Usage caché des traits de coupe en offset
 <div class="container">
     <div>
-        <img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg" | relative_url }}" />
+        <img class="Utilisation de machine offset" class="large" src="{{"/assets/images/posts/les-traits-de-coupe/changing-offset-plates-1241344.jpg" | relative_url }}" />
     </div>
     <div>
         <p>
@@ -79,4 +80,4 @@ Pensez à la __marge intérieure__ pour sécuriser votre design des plis et de l
 Les __traits de coupes__ ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
 <span class="text-color-m">—-----</span> : coupe du format fini 
 
-<img class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg" | relative_url }}" />
+<img class="Vignette de Traits de coupe" class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg" | relative_url }}" />

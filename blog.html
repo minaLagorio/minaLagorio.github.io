@@ -4,22 +4,24 @@ layout: page
 {% assign featured_post = site.posts[0] %}
 <section id="blog">
     {% if featured_post %}
-        <div class="block-link featured container-row centered-content" data-url="{{ featured_post.url }}">
-            <img class="container-item-1" src="{{ featured_post.thumbnail_url }}" />
-            <div class="container-item-2">
-                <h1>{{ featured_post.title }}</h1>
-                <p>{{ featured_post.description }}</p>
-                <a href="{{ featured_post.url }}" class="button">Lire l'article</a>
+        <div class="block-link featured" data-url="{{ featured_post.url }}">
+            <div class="max-width container-row centered-content">
+                <img alt="Vignette de {{ featured_post.title }}" class="container-item-1" src="{{ featured_post.image }}" />
+                <div class="container-item-2">
+                    <h1>{{ featured_post.title }}</h1>
+                    <p>{{ featured_post.description }}</p>
+                    <a href="{{ featured_post.url }}" class="button medium">Lire l'article</a>
+                </div>
             </div>
         </div>
     {% endif %}
-    <ul class="post-list">
+    <ul class="post-list max-width">
         {% for post in site.posts offset:1 %}
             <li class="block-link" data-url="{{ post.url }}">
-                <img src="{{ post.thumbnail_url }}" />
+                <img alt="Vignette de {{ post.title }}" src="{{ post.image }}" />
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.description }}</p>
-                <a class="button outline" href="{{ post.url }}">Lire l'article</a>
+                <a class="button outline medium" href="{{ post.url }}">Lire l'article</a>
             </li>
         {% endfor %}
     </ul>
