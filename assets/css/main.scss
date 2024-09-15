@@ -41,7 +41,7 @@
     padding: 40px $h-gutter;
 }
 #testimonies img {
-    margin: 10px 0;
+    margin: 10px;
 }
 
 .nav-menu li a.active {
@@ -240,7 +240,7 @@ i.icon.malt {
     #about {
         padding-bottom: 150px;
     }
-    #about .content img, #contact .content img {
+    #about .content .marina img, #contact .content img {
         width: 140px;
     }
 
@@ -277,6 +277,14 @@ i.icon.malt {
 
     #about .testimonies img {
         width: 70px;
+    }
+
+    #about .testimonies {
+        display: none;
+    }
+
+    #testimonies img {
+        width: 75px;
     }
 }
 
