@@ -49,6 +49,7 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-analytics (0.1.14)
     jekyll-compress-images (1.2)
       image_optim
       image_optim_pack
@@ -138,6 +139,7 @@ DEPENDENCIES
   csv
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.3)
+  jekyll-analytics
   jekyll-compress-images
   jekyll-feed (~> 0.12)
   jekyll-seo-tag

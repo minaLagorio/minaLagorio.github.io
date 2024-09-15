@@ -64,12 +64,6 @@ imageoptim:
   svgo: false
 
 
-jekyll_analytics:
-  GoogleAnalytics:
-    id: G-F1V2DX05WV
-    anonymizeIp: true
-
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
