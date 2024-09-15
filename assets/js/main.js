@@ -2,12 +2,12 @@ const CREATION_MENU = {
   'illustration': {
     id: 'illustration',
     name: 'Illustration',
-    lastIndex: 38,
+    lastIndex: 39,
   },
   'typo': {
     id: 'typo',
     name: 'Typos',
-    lastIndex: 15,
+    lastIndex: 16,
   },
   'imprime': {
     id: 'imprime',
