@@ -80,4 +80,5 @@ Pensez à la __marge intérieure__ pour sécuriser votre design des plis et de l
 Les __traits de coupes__ ne sont pas obligatoires pour le bon déroulé de l’impression et le façonnage de votre document, mais ils sont recommandés.<br/>
 <span class="text-color-m">—-----</span> : coupe du format fini 
 
+
 <img class="Vignette de Traits de coupe" class="large" src="{{"/assets/images/posts/les-traits-de-coupe/thumbnail.jpg" | relative_url }}" />

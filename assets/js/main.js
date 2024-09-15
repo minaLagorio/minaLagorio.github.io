@@ -1,19 +1,24 @@
 const CREATION_MENU = {
-  'imprime': {
-    id: 'imprime',
-    name: 'Design imprimé',
-    lastIndex: 13,
-  }, 
-  'numerique': {
-    id: 'numerique',
-    name: 'Design Numérique',
-    lastIndex: 11,
-  }, 
   'illustration': {
     id: 'illustration',
     name: 'Illustration',
     lastIndex: 38,
   },
+  'typo': {
+    id: 'typo',
+    name: 'Typos',
+    lastIndex: 15,
+  },
+  'imprime': {
+    id: 'imprime',
+    name: 'Design imprimé',
+    lastIndex: 14,
+  }, 
+  'numerique': {
+    id: 'numerique',
+    name: 'Design Numérique',
+    lastIndex: 13,
+  }, 
   'photo': {
     id: 'photo',
     name: 'Photos',
@@ -21,7 +26,7 @@ const CREATION_MENU = {
   },
 };
 
-const DEFAULT_MENU = 'imprime';
+const DEFAULT_MENU = 'illustration';
 
 const BASE_WIDTH = 2979;
 const BASE_HEIGHT = 1458;
@@ -86,10 +91,12 @@ const loadCreationImages = async (id) => {
 
   let grid = [[]];
 
-  // + 3 to give enough rows for placing images
-  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex / 3) + 3; rowIndex++) {
+  // * 2 to give enough rows for placing images
+  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex / 3) * 2; rowIndex++) {
     grid[rowIndex] = [0, 0, 0]; // 3 columns   
   }
+
+  grid.push([0, 0, 0]);
 
   const images = new Array();
   

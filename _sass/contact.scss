@@ -3,6 +3,10 @@
     position: relative;
     padding-bottom: 140px;
     background-color: $color-bg-c;
+    background-image: url(/assets/images/print_test_cmyb.svg);
+    background-size: 500px;
+    background-position: left calc(100% - 50px);
+    background-repeat: no-repeat;
 }
 
 #contact .right-content {

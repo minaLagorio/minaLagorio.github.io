@@ -3,6 +3,10 @@
     position: relative;
     padding-bottom: 140px;
     background-color: $color-gray;
+    background-image: url(/assets/images/print_test_cmyb.svg);
+    background-position: calc(0px + $h-gutter) calc(100% - 50px);
+    background-repeat: no-repeat;
+    background-size: 500px;
 }
 
 #legals .content {
