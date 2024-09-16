@@ -38,3 +38,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "jekyll-compress-images"
 
 gem "jekyll-seo-tag"
+
+gem "jekyll-sitemap"
