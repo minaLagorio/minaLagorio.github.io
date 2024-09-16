@@ -10,6 +10,8 @@ author: Marina Créativité
 
 Certains packagings sont si complexes que des imprimeries se sont spécialisées dans ce domaine. Pour les formats les plus classiques, nous les retrouvons également dans des imprimeries plus traditionnelles.
 
+<img class="Utilisation de machine offset" class="large" src="{{"/assets/images/posts/le-packaging/thumbnail.jpg" | relative_url }}" />
+
 ## Le packaging, c'est quoi ?
 
 C’est simplement l’__emballage__ !
