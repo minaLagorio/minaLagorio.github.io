@@ -40,10 +40,10 @@ locale: fr_FR
 navigation:
   - text: "Mes créations"
     url: /creations
-    color: "color-y"
+    color: "color-m"
   - text: "Qui suis-je"
     url: /apropos
-    color: "color-m"
+    color: "color-y"
   - text: "Me contacter"
     url: /contact
     color: "color-c"

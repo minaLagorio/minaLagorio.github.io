@@ -1,4 +1,9 @@
 const CREATION_MENU = {
+  'imprime': {
+    id: 'imprime',
+    name: 'Design imprimé',
+    lastIndex: 14,
+  },
   'illustration': {
     id: 'illustration',
     name: 'Illustration',
@@ -9,11 +14,6 @@ const CREATION_MENU = {
     name: 'Typos',
     lastIndex: 16,
   },
-  'imprime': {
-    id: 'imprime',
-    name: 'Design imprimé',
-    lastIndex: 14,
-  }, 
   'numerique': {
     id: 'numerique',
     name: 'Design Numérique',
@@ -26,7 +26,7 @@ const CREATION_MENU = {
   },
 };
 
-const DEFAULT_MENU = 'illustration';
+const DEFAULT_MENU = 'imprime';
 
 const BASE_WIDTH = 2979;
 const BASE_HEIGHT = 1458;

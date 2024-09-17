@@ -32,11 +32,14 @@ button, a.button {
 }
 
 nav {
+    position: fixed;
     display: flex;
+    width: calc(100% - 60px);
     flex-direction: row;
     background-color: #FFF;
     padding: 10px $h-gutter;
     justify-content: space-between;
+    z-index: 10;
     height: $nav-height;
 }
 

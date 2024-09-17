@@ -19,6 +19,7 @@
     background-color: $color-gray;
     min-height: 200px;
     padding: 30px $h-gutter;
+    padding-top: calc($nav-height + 60px);
 }
 #hero img {
     display: block;
@@ -222,7 +223,7 @@ i.icon.malt {
         position: absolute;
         left: 0;
         flex-direction: column;
-        width: 100%;
+        width: 100vw;
         background-color: $color-bg-y;
         top: calc($nav-height - 20px);
         padding: 0;

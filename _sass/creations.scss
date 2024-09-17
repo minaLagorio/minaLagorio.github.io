@@ -1,6 +1,7 @@
 #creations {
-    background-color: $color-bg-y;
+    background-color: $color-bg-m;
     padding: 60px $h-gutter;
+    padding-top: calc($nav-height + 60px);
 }
 
 .creations-nav {
