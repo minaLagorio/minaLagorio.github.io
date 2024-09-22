@@ -34,7 +34,7 @@ const BASE_HEIGHT = 1458;
 const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
 const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
 
-window.onload = () => {
+window.onload = async () => {
   /* Menu */
   const mobileIcon = document.querySelector('.mobile-icon');
   const navMenu = document.querySelector('.nav-menu');
@@ -53,8 +53,6 @@ window.onload = () => {
     let creationSelectedMenu = DEFAULT_MENU;
     const subMenus = document.querySelectorAll('.creation-link');
 
-    loadCreationImages(creationSelectedMenu);
-
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
         creationSelectedMenu = e.currentTarget.dataset.id;
@@ -64,6 +62,26 @@ window.onload = () => {
           sub.classList.remove('active');
           e.currentTarget.classList.add('active');
         }
+      });
+    }
+
+    await loadCreationImages(creationSelectedMenu);
+
+    const images = document.querySelectorAll('.image-container');
+    const imageOverlay = document.querySelector('.image-overlay');
+    let toggleImageOverlay = false;
+
+    imageOverlay.addEventListener('click', function(e) {
+      imageOverlay.style.display = 'none';
+      toggleImageOverlay = false;
+    });
+
+    for(const i of images) {
+      i.addEventListener('click', function(e) {
+        imageOverlay.style.display = 'flex';
+        toggleImageOverlay = true;
+
+        document.querySelector('.image-overlay .image').replaceChildren(e.currentTarget.children[0].cloneNode(true));
       });
     }
   }
