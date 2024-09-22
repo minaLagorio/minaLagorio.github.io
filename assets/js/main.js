@@ -50,13 +50,21 @@ window.onload = async () => {
 
   /* Creations */
   if (document.querySelector('#creations')) {
-    let creationSelectedMenu = DEFAULT_MENU;
+    const urlHash = window.location.hash.substring(1);
+
+    let creationSelectedMenu = urlHash ? urlHash : DEFAULT_MENU;
     const subMenus = document.querySelectorAll('.creation-link');
+
+    for (let sub of subMenus) {
+      sub.classList.remove('active');
+      if (sub.dataset.id === creationSelectedMenu) {
+        sub.classList.add('active');
+      }
+    }
 
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
-        creationSelectedMenu = e.currentTarget.dataset.id;
-        loadCreationImages(creationSelectedMenu);
+        loadCreationImages(e.currentTarget.dataset.id);
 
         for (let sub of subMenus) {
           sub.classList.remove('active');
@@ -67,23 +75,23 @@ window.onload = async () => {
 
     await loadCreationImages(creationSelectedMenu);
 
-    const images = document.querySelectorAll('.image-container');
-    const imageOverlay = document.querySelector('.image-overlay');
-    let toggleImageOverlay = false;
+    // const images = document.querySelectorAll('.image-container');
+    // const imageOverlay = document.querySelector('.image-overlay');
+    // let toggleImageOverlay = false;
 
-    imageOverlay.addEventListener('click', function(e) {
-      imageOverlay.style.display = 'none';
-      toggleImageOverlay = false;
-    });
+    // imageOverlay.addEventListener('click', function(e) {
+    //   imageOverlay.style.display = 'none';
+    //   toggleImageOverlay = false;
+    // });
 
-    for(const i of images) {
-      i.addEventListener('click', function(e) {
-        imageOverlay.style.display = 'flex';
-        toggleImageOverlay = true;
+    // for(const i of images) {
+    //   i.addEventListener('click', function(e) {
+    //     imageOverlay.style.display = 'flex';
+    //     toggleImageOverlay = true;
 
-        document.querySelector('.image-overlay .image').replaceChildren(e.currentTarget.children[0].cloneNode(true));
-      });
-    }
+    //     document.querySelector('.image-overlay .image').replaceChildren(e.currentTarget.children[0].cloneNode(true));
+    //   });
+    // }
   }
   /*************/
 
