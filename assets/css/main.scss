@@ -192,13 +192,13 @@ i.icon {
 }
 
 i.icon.linkedin {
-    @include linkedin-icon(black);
+    @include linkedin-icon('000');
 }
 i.icon.behance {
-    @include behance-icon(black);
+    @include behance-icon('000');
 }
 i.icon.malt {
-    @include malt-icon(black);
+    @include malt-icon('000');
 }
 
 @media (max-width: 768px) {
