@@ -34,6 +34,8 @@ const BASE_HEIGHT = 1458;
 const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
 const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
 
+let images = new Array();
+
 window.onload = async () => {
   /* Menu */
   const mobileIcon = document.querySelector('.mobile-icon');
@@ -62,6 +64,10 @@ window.onload = async () => {
       }
     }
 
+    const imageOverlay = document.querySelector('.image-overlay');
+    const leftBtn = document.querySelector('.left-button');
+    const rightBtn = document.querySelector('.right-button')
+
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
         loadCreationImages(e.currentTarget.dataset.id);
@@ -75,23 +81,64 @@ window.onload = async () => {
 
     await loadCreationImages(creationSelectedMenu);
 
-    // const images = document.querySelectorAll('.image-container');
-    // const imageOverlay = document.querySelector('.image-overlay');
-    // let toggleImageOverlay = false;
+    imageOverlay.addEventListener('click', function(e) {
+      if (e.target !== leftBtn && e.target !== rightBtn) {
+        imageOverlay.style.display = 'none';
+      }
+    });
 
-    // imageOverlay.addEventListener('click', function(e) {
-    //   imageOverlay.style.display = 'none';
-    //   toggleImageOverlay = false;
-    // });
+    const observer = new MutationObserver((mutations, observer) => {
+      mutations.forEach((mutation) => {
+        if (typeof mutation.target.dataset.currentImageId === "undefined") {
+          return;
+        }
 
-    // for(const i of images) {
-    //   i.addEventListener('click', function(e) {
-    //     imageOverlay.style.display = 'flex';
-    //     toggleImageOverlay = true;
+        const currentImage = document.querySelector(`[data-image-id=${mutation.target.dataset.currentImageId}]`);
 
-    //     document.querySelector('.image-overlay .image').replaceChildren(e.currentTarget.children[0].cloneNode(true));
-    //   });
-    // }
+        if (currentImage === null) {
+          return;
+        }
+
+        const clonedImage = currentImage.cloneNode(true);
+
+        clonedImage.dataset.imageId = undefined;
+
+        document.querySelector('.image-overlay .image').replaceChildren(clonedImage);
+      });
+    })
+    
+    observer.observe(imageOverlay, {
+      attributes: true, // this can be omitted
+      attributeFilter: ["data-current-image-id"]
+    });
+
+    const leftBtnEvt = (e) => {
+      e.preventDefault();
+      const currentImg = document.querySelector(`[data-image-id=${imageOverlay.dataset.currentImageId}]`);
+      const previousImg = currentImg.parentElement.previousElementSibling;
+  
+      if (previousImg === null) {
+        imageOverlay.dataset.currentImageId  = images[images.length - 1].dataset.imageId;
+        return;
+      }
+  
+      imageOverlay.dataset.currentImageId = previousImg.children[0].dataset.imageId;
+    }
+    const rightBtnEvt = (e) => {
+      e.preventDefault();
+      const currentImg = document.querySelector(`[data-image-id=${imageOverlay.dataset.currentImageId}]`);
+      const nextImg = currentImg.parentElement.nextElementSibling;
+  
+      if (nextImg === null) {
+        imageOverlay.dataset.currentImageId = images[0].dataset.imageId;
+        return;
+      }
+  
+      imageOverlay.dataset.currentImageId = nextImg.children[0].dataset.imageId;
+    }
+  
+    leftBtn.addEventListener('click', leftBtnEvt);
+    rightBtn.addEventListener('click', rightBtnEvt);
   }
   /*************/
 
@@ -108,8 +155,11 @@ window.onload = async () => {
   /********/
 }
 
-const loadCreationImages = async (id) => {
+const loadCreationImages = async (id, leftBtn, rightBtn) => {
   const imageGridElt = document.querySelector('.image-grid');
+  const imageOverlay = document.querySelector('.image-overlay');
+
+  imageOverlay.dataset.currentImageId = undefined;
 
   imageGridElt.innerHTML = '';
 
@@ -124,12 +174,13 @@ const loadCreationImages = async (id) => {
 
   grid.push([0, 0, 0]);
 
-  const images = new Array();
+  images = new Array();
   
   for (let i = 1; i <= creationInfo.lastIndex; i++) {
     const img = document.createElement('img');
 
-    img.src = `/assets/images/${id}_${i}.jpg`;
+    img.dataset.imageId = `${id}_${i}`;
+    img.src = `/assets/images/${img.dataset.imageId}.jpg`;
     img.loading = 'lazy';
 
     images.push(img);
@@ -142,6 +193,11 @@ const loadCreationImages = async (id) => {
     imgContainer.classList.add('image-container');
 
     const img = images[i];
+
+    img.addEventListener('click', function(e) {
+      imageOverlay.style.display = 'flex';
+      imageOverlay.dataset.currentImageId = e.currentTarget.dataset.imageId;
+    });
 
     imgContainer.appendChild(img);
 
@@ -205,6 +261,8 @@ const loadCreationImages = async (id) => {
 
     }
   }
+
+  return images;
 };
 
 const getImageSize = (url) => {

@@ -77,8 +77,22 @@
     margin: 0;
 }
 
-#creations .image-overlay .left-button, #creations .image-overlay .right-button {
-    display: absolute;
+#creations .image-overlay .nav-icon {
+    position: absolute;
+    height: 100%;
+    width: 90px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#creations .image-overlay .left-button {
+    left: 0;
+    background-image: url(/assets/images/left.svg);
+}
+#creations .image-overlay .right-button {
+    right: 0;
+    background-image: url(/assets/images/right.svg);
 }
 
 #creations .image-overlay .image img {
