@@ -51,7 +51,7 @@ CMJ - synthèse soustractive : Retirer les trois couleurs primaires pour obtenir
 
 <div class="container container-row centered-content">    
     <div>
-        <img alt="Gamut" class="medium" src="{{"/assets/images/posts/les-couleurs/gamut.jpg" | relative_url }}" />
+        <img alt="Gamut" class="medium" src="{{"/assets/images/posts/les-couleurs/GAMUT.png" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Le gamut</h3>
@@ -71,7 +71,7 @@ En offset, pour compenser ce manque de reproduction des couleurs en CMJN, il exi
 
 <div class="container container-row centered-content">    
     <div>
-        <img alt="Tramage quadri" class="medium" src="{{"/assets/images/posts/les-couleurs/trames.jpg" | relative_url }}" />
+        <img alt="Tramage quadri" class="medium" src="{{"/assets/images/posts/les-couleurs/trames.png" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Le tramage quadri</h3>
