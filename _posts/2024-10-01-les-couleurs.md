@@ -64,10 +64,17 @@ CMJ - synthèse soustractive : Retirer les trois couleurs primaires pour obtenir
     </div>
 </div>
 
-<img class="Couleur PANTONE" class="large" src="{{"/assets/images/posts/les-couleurs/pantone.jpg" | relative_url }}" />
-
-<h3>Le pantone</h3>
-En offset, pour compenser ce manque de reproduction des couleurs en CMJN, il existe des nuanciers tels que Pantone pour reproduire une couleur en ton direct par le mélange de certains pigments sans passer par le tramage quadri. Je reviendrai plus en détail sur ce sujet dans un autre article.
+<div class="container container-row centered-content">    
+    <div>
+        <img alt="Couleur PANTONE" class="medium" src="{{"/assets/images/posts/les-couleurs/pantone.png" | relative_url }}" />
+    </div>
+    <div class="container-item-1">
+        <h3>Le pantone</h3>
+        <p>
+            En offset, pour compenser ce manque de reproduction des couleurs en CMJN, il existe des nuanciers tels que Pantone pour reproduire une couleur en ton direct par le mélange de certains pigments sans passer par le tramage quadri. Je reviendrai plus en détail sur ce sujet dans un autre article.
+        </p>
+    </div>
+</div>
 
 <div class="container container-row centered-content">    
     <div>
@@ -76,7 +83,7 @@ En offset, pour compenser ce manque de reproduction des couleurs en CMJN, il exi
     <div class="container-item-1">
         <h3>Le tramage quadri</h3>
         <p>
-            Chaque couleur à une inclinaison et un ordre précis pour former les mélanges de couleurs en CMJN. <br/>
+            Chaque couleur à une inclinaison et un ordre précis pour former les mélanges de couleurs en CMJN. <br/><br/>
             <b>Les couleurs sont fascinantes.</b>
         </p>
     </div>
