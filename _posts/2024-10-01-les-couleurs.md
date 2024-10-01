@@ -16,7 +16,7 @@ Vous avez certainement déjà dû entendre parler de RVB et de CMJN ? Retrouvez 
         <h3>CMJN : la synthèse soustractive</h3>
         <p>
             Utilisée en imprimerie, la synthèse soustractive correspond au mélange des couleurs pigmentaires. Dans ce cas, les couleurs principales sont le Cyan, le Magenta et le Jaune. 
-            Bon à savoir : en imprimerie, le N de CMJN correspond au noir pour permettre d’avoir des ombres et des noirs plus profonds sur vos imprimés. 
+            Bon à savoir : en imprimerie, le N de CMJN correspond au Noir pour permettre d’avoir des ombres et des noirs plus profonds sur vos imprimés. 
         </p>
     </div>
 </div>    
@@ -28,14 +28,18 @@ Vous avez certainement déjà dû entendre parler de RVB et de CMJN ? Retrouvez 
     <div class="container-item-1">
         <h3>RVB : la synthèse additive</h3>
         <p>
-            Utilisée notamment pour les écrans, la synthèse soustractive correspond à la décomposition de la lumière réelle. Vos écrans ont 3 leds, une Rouge, une Verte et une Bleue. Ces trois couleurs sont les couleurs primaires de cette synthèse. 
+            Utilisée notamment pour les écrans, la synthèse additive correspond à la décomposition de la lumière réelle. Vos écrans ont 3 leds, une Rouge, une Verte et une Bleue. Ces trois couleurs sont les couleurs primaires de cette synthèse. 
         </p>
     </div>
 </div>
 
-Moyen mnémotechnique pour différencier ces deux profils colorimétriques : 
-RVB - synthèse additive : Ajouter les trois couleurs primaires pour obtenir du blanc.
-CMJ - synthèse soustractive : Retirer les trois couleurs primaires pour obtenir du blanc.
+<p>
+Moyen mnémotechnique pour différencier ces deux profils colorimétriques :
+<br/>RVB - synthèse additive : Ajouter les trois couleurs primaires pour obtenir du blanc.
+<br/>CMJ - synthèse soustractive : Retirer les trois couleurs primaires pour obtenir du blanc.
+</p>
+
+<br />
 
 <div class="container container-row centered-content">    
     <div>
@@ -66,7 +70,7 @@ CMJ - synthèse soustractive : Retirer les trois couleurs primaires pour obtenir
 
 <div class="container container-row centered-content">    
     <div>
-        <img alt="Couleur PANTONE" class="medium" src="{{"/assets/images/posts/les-couleurs/pantone.png" | relative_url }}" />
+        <img alt="Couleur PANTONE" class="medium" src="{{"/assets/images/posts/les-couleurs/pantone.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>Le pantone</h3>
