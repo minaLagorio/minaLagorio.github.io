@@ -10,7 +10,7 @@ Vous avez certainement déjà dû entendre parler de RVB et de CMJN ? Retrouvez 
 ## RVB et CMJN
 <div class="container container-row centered-content">
     <div>
-        <img alt="CMJN : la synthèse soustractive" class="medium" src="{{"/assets/images/posts/les-couleurs/SYNTH-03.jpg" | relative_url }}" />
+        <img alt="CMJN : la synthèse soustractive" class="medium" src="{{"/assets/images/posts/les-couleurs/SYNTH-02.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>CMJN : la synthèse soustractive</h3>
@@ -23,7 +23,7 @@ Vous avez certainement déjà dû entendre parler de RVB et de CMJN ? Retrouvez 
 
 <div class="container container-row centered-content">    
     <div>
-        <img alt="RVB : la synthèse additive" class="medium" src="{{"/assets/images/posts/les-couleurs/SYNTH-02.jpg" | relative_url }}" />
+        <img alt="RVB : la synthèse additive" class="medium" src="{{"/assets/images/posts/les-couleurs/SYNTH-03.jpg" | relative_url }}" />
     </div>
     <div class="container-item-1">
         <h3>RVB : la synthèse additive</h3>
