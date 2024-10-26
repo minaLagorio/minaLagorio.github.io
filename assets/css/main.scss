@@ -109,23 +109,13 @@
     margin: auto 0;
     padding-bottom: 60px;
 }
-.buttons-container a:first-child {
-    &:hover {
-        background-color: transparent;
-        color: black !important;
-    }
-    &:hover + a {
-        background-color: black;
-        color: $color-text-light;
-    }
-}
-.buttons-container a:last-child:hover {
-    background-color: black;
-    color: $color-text-light;
-}
-.buttons-container a:first-child:has(+ a:hover) {
+.button:hover {
     background-color: transparent;
     color: black !important;
+}
+.button.outline:hover {
+    background-color: black;
+    color: $color-gray !important;
 }
 
 .container-col {

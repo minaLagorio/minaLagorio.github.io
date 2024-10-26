@@ -34,13 +34,19 @@ button, a.button {
 nav {
     position: fixed;
     display: flex;
-    width: calc(100% - 60px);
+    width: 100%;
     flex-direction: row;
     background-color: #FFF;
-    padding: 10px $h-gutter;
+    padding: 10px 0;
     justify-content: space-between;
     z-index: 10;
     height: $nav-height;
+}
+nav .logo-link {
+    margin-left: $h-gutter;
+}
+nav .nav-menu {
+    margin-right: $h-gutter;
 }
 
 nav ul {
