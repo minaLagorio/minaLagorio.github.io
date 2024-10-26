@@ -1,3 +1,7 @@
+.post-content {
+    background-color: $color-gray;
+}
+
 .post-content img.small {
     width: 100px;
 }
@@ -8,10 +12,12 @@
     width: 400px;
 }
 
-.post-content {
+.post-content .post-container {
     padding-bottom: 100px;
     padding-top: 120px;
-    background-color: $color-gray;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
 }
 
 .post-content .container-row img {
