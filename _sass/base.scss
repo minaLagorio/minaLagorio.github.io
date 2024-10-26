@@ -135,6 +135,10 @@ footer a {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+    transition: transform 0.2s ease-in-out;
+}
+.image-link:hover {
+    transform: scale(1.1);
 }
 
 .image-link.linkedin {
@@ -148,12 +152,25 @@ footer a {
 }
 
 .block-link {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+}
+.block-link img {
+    transition: transform 0.21s ease-in-out;
 }
 .block-link .button {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    margin-top: auto;
+}
+.block-link:hover img {
+    transform: scale(1.02);
+}
+.block-link:hover .button {
+    background-color: black;
+    color: $color-text-light;
 }
 
 .max-width {

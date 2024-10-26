@@ -84,6 +84,14 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+#creations .image-overlay .left-button:hover {
+    transform: translateX(-3px);
+}
+#creations .image-overlay .right-button:hover {
+    transform: translateX(3px);
 }
 
 #creations .image-overlay .left-button {
@@ -99,4 +107,8 @@
     width: 80%;
     object-fit: contain;
     max-height: 90%;
+}
+
+.creation-link:hover {
+    font-weight: 600;
 }
