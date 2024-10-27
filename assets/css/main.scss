@@ -213,13 +213,18 @@ i.icon.malt {
 
 @media (max-width: 768px) {
     .post-content .post-container, #blog .post-list, #about .content, #contact .content {
-        padding: 0 $mobile-h-gutter;
+        padding: 100px $mobile-h-gutter;
     }
-    #hero {
-        padding: 30px $mobile-h-gutter;
+    #hero, #blog .featured {
+        padding: 0 $mobile-h-gutter;
+        padding-top: 120px;
+        padding-bottom: 30px;
+    }
+    nav .logo-link {
+        margin-left: $mobile-h-gutter;
     }
     #creations {
-        padding: 60px $mobile-h-gutter;
+        padding: 100px $mobile-h-gutter;
     }
     #testimonies {
         padding: 40px $mobile-h-gutter;
