@@ -212,6 +212,18 @@ i.icon.malt {
 }
 
 @media (max-width: 768px) {
+    .post-content .post-container, #blog .post-list, #about .content, #contact .content {
+        padding: 0 $mobile-h-gutter;
+    }
+    #hero {
+        padding: 30px $mobile-h-gutter;
+    }
+    #creations {
+        padding: 60px $mobile-h-gutter;
+    }
+    #testimonies {
+        padding: 40px $mobile-h-gutter;
+    }
     .container-row:not(.responsive-row) {
         flex-direction: column;
     }
@@ -226,9 +238,6 @@ i.icon.malt {
     }
     #cta .top-content {
         height: 450px;
-    }
-    nav {
-        padding: 0 $h-gutter;
     }
     .nav-menu {
         display: none;
