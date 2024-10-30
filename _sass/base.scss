@@ -178,6 +178,10 @@ footer a {
     background-color: black;
     color: $color-text-light;
 }
+.block-link.featured:hover .button {
+    background-color: transparent;
+    color: black;
+}
 
 .max-width {
     max-width: $max-width-content;

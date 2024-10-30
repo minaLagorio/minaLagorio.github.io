@@ -77,7 +77,7 @@
 #cta .bottom-content {
     background-color: $color-bg-m;
     min-height: 200px;
-    padding: 15px 2rem;
+    padding: 15px $h-gutter;
 }
 
 #cta .bottom-content img {
@@ -211,7 +211,7 @@ i.icon.malt {
     @include malt-icon('000');
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .post-content .post-container, #blog .post-list, #about .content, #contact .content {
         padding: 100px $mobile-h-gutter;
     }
@@ -229,15 +229,24 @@ i.icon.malt {
     #testimonies {
         padding: 40px $mobile-h-gutter;
     }
+}
+
+@media (max-width: 1030px) {
     .container-row:not(.responsive-row) {
         flex-direction: column;
     }
     .buttons-container {
         justify-content: initial;
     }
+    #hero {
+        align-items: center !important;
+    }
     #hero img {
         width: 100%;
     }
+}
+
+@media (max-width: 768px) {
     #cta .bottom-content img {
         width: 140px;
     }
