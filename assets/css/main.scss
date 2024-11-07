@@ -229,6 +229,9 @@ i.icon.malt {
     #testimonies {
         padding: 40px $mobile-h-gutter;
     }
+    #cta .bottom-content {
+        padding: 15px $mobile-h-gutter;   
+    }
 }
 
 @media (max-width: 1030px) {
