@@ -70,6 +70,8 @@ window.onload = async () => {
 
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
+        resetGrid();
+
         loadCreationImages(e.currentTarget.dataset.id);
 
         for (let sub of subMenus) {
@@ -161,8 +163,6 @@ const loadCreationImages = async (id, leftBtn, rightBtn) => {
 
   imageOverlay.dataset.currentImageId = undefined;
 
-  imageGridElt.innerHTML = '';
-
   const creationInfo = CREATION_MENU[id];
 
   let grid = [[]];
@@ -188,6 +188,8 @@ const loadCreationImages = async (id, leftBtn, rightBtn) => {
 
   shuffleArray(images);
 
+  const imgContainers = [];
+
   for(let i = 0; i < images.length; i++) {
     const imgContainer = document.createElement('figure');
     imgContainer.classList.add('image-container');
@@ -205,7 +207,7 @@ const loadCreationImages = async (id, leftBtn, rightBtn) => {
 
     const r = imageSize.width / imageSize.height;
 
-    imageGridElt.appendChild(imgContainer);
+    imgContainers.push(imgContainer);
 
     let placed = false;
     for(let rowIndex = 0; rowIndex < grid.length; rowIndex++) {
@@ -260,6 +262,15 @@ const loadCreationImages = async (id, leftBtn, rightBtn) => {
       }
 
     }
+
+    setTimeout(() => {
+      for (let c of imgContainers) {
+        imageGridElt.appendChild(c);
+      }
+      
+      const loadingElements = imageGridElt.querySelectorAll('.loading');
+      loadingElements.forEach(element => element.remove());
+    }, (0.5 + Math.random()) * 1000);
   }
 
   return images;
@@ -283,5 +294,25 @@ const shuffleArray = (array) => {
   for (let i = array.length - 1; i >= 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+const resetGrid = () => {
+  const imageGridElt = document.querySelector('.image-grid');
+
+  imageGridElt.innerHTML = '';
+
+  for (let i = 0; i < 7; i++) {
+    const imgLoader = document.createElement('div');
+
+    imgLoader.className = 'image-container loading';
+
+    if (i === 1) {
+      imgLoader.style = 'grid-row: 1 / span 2; grid-column-start: 2;';
+    } else if (i === 3) {
+      imgLoader.style = 'grid-row-start: 3; grid-column: 1 / span 2;';
+    }
+
+    imageGridElt.appendChild(imgLoader);
   }
 }

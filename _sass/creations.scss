@@ -46,6 +46,18 @@
     cursor: zoom-in;
 }
 
+.image-container.loading {
+    background-color: #000000;
+    opacity: 0.09;
+    animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.09; }
+    50% { opacity: 0.12; }
+    100% { opacity: 0.09; }
+}
+
 .image-container:hover {
     transform: scale(1.02);
 }
