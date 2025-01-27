@@ -34,6 +34,8 @@ const BASE_HEIGHT = 1458;
 const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
 const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
 
+let updtTo = null;
+
 let images = new Array();
 
 window.onload = async () => {
@@ -70,8 +72,6 @@ window.onload = async () => {
 
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
-        resetGrid();
-
         loadCreationImages(e.currentTarget.dataset.id);
 
         for (let sub of subMenus) {
@@ -265,7 +265,11 @@ const loadCreationImages = async (id, leftBtn, rightBtn) => {
 
     }
 
-    setTimeout(() => {
+    if (updtTo) {
+      clearTimeout(updtTo);
+    }
+
+    updtTo = setTimeout(() => {
       for (let c of imgContainers) {
         imageGridElt.appendChild(c);
       }
@@ -300,6 +304,10 @@ const shuffleArray = (array) => {
 }
 
 const resetGrid = () => {
+  if (updtTo) {
+    clearTimeout(updtTo);
+  }
+
   const imageGridElt = document.querySelector('.image-grid');
 
   imageGridElt.innerHTML = '';
