@@ -158,6 +158,8 @@ window.onload = async () => {
 }
 
 const loadCreationImages = async (id, leftBtn, rightBtn) => {
+  resetGrid();
+  
   const imageGridElt = document.querySelector('.image-grid');
   const imageOverlay = document.querySelector('.image-overlay');
 
