@@ -12,7 +12,7 @@ const CREATION_MENU = {
   'typo': {
     id: 'typo',
     name: 'Typos',
-    lastIndex: 16,
+    lastIndex: 17,
   },
   'numerique': {
     id: 'numerique',
@@ -28,8 +28,8 @@ const CREATION_MENU = {
 
 const DEFAULT_MENU = 'imprime';
 
-const BASE_WIDTH = 2979;
-const BASE_HEIGHT = 1458;
+const BASE_WIDTH = 2980;
+const BASE_HEIGHT = 1459;
 
 const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
 const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
