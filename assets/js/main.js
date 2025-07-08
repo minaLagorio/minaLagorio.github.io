@@ -2,7 +2,7 @@ const CREATION_MENU = {
   'imprime': {
     id: 'imprime',
     name: 'Design imprimé',
-    lastIndex: 15,
+    lastIndex: 16,
   },
   'illustration': {
     id: 'illustration',
