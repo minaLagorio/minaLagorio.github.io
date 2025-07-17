@@ -9,10 +9,14 @@
     padding-top: 20px;
 }
 
-#about .content {
+#about .content, #expertise .content     {
     padding: 0 $h-gutter;
     z-index: 0;
     border-top: 150px solid white;
+}
+
+#expertise .content {
+    padding-bottom: 80px;
 }
 
 #about .content .marina img {
