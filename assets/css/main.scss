@@ -211,6 +211,10 @@ i.icon.malt {
     @include malt-icon('000');
 }
 
+#about .testimonies {
+    margin-top: 40px;
+}
+
 @media (max-width: 1200px) {
     .post-content .post-container, #blog .post-list, #about .content, #contact .content {
         padding: 100px $mobile-h-gutter;
