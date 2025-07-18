@@ -1,7 +1,6 @@
 #about {
     z-index: 1;
     position: relative;
-    padding-bottom: 70px;
     background-color: $color-bg-y;
 }
 
@@ -17,10 +16,6 @@
     padding: 0 $h-gutter;
     z-index: 0;
     border-top: 150px solid white;
-}
-
-#expertise .content {
-    padding-bottom: 80px;
 }
 
 #about .content .marina img {
@@ -48,15 +43,30 @@
     margin: 0 auto;
 }
 
+#about #title {
+    padding-bottom: 50px;
+}
+
 #about .background-heading {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/images/deco_apropos_1.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/assets/images/deco_apropos_1.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
     padding: 20px;
-    border-radius: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+#about #expertise {
+    background-color: white;
+    border-top: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 768px) {
@@ -65,5 +75,9 @@
     }
     #about .button {
         margin-top: 10px;
+    }
+    #about .background-heading {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
