@@ -63,10 +63,14 @@
 }
 
 #about #expertise {
-    background-color: white;
+    background-color: transparent;
     border-top: none;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+#about #expertise .container-item-1 {
+    margin-right: 50px;
 }
 
 @media (max-width: 768px) {
