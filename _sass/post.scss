@@ -32,3 +32,41 @@
     text-decoration: underline;
     color: #000;
 }
+
+.post-content .callout {
+    margin: 40px 0;
+    padding: 24px;
+    background-color: #f6f6f6;
+    border: 2px solid #000;
+}
+
+.post-content .callout h2 {
+    margin-top: 0;
+}
+
+.post-content .callout ul {
+    margin: 16px 0;
+    padding-left: 20px;
+}
+
+.post-content .callout .actions {
+    margin-top: 16px;
+}
+
+.post-content .callout .actions .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #000;
+}
+
+.post-content .callout .actions .btn:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.post-content .callout .actions .note {
+    margin-left: 12px;
+}
