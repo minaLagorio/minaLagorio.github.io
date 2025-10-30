@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Les métiers de la communication, du marketing et du digital"
-description: "Dans le monde des industries graphiques, il y a pléthore de termes techniques. Mais qu’en est-il des différents plis ?"
+description: "Le monde de la communication est un écosystème vaste et interconnecté, où chaque métier joue un rôle clé dans la création, la diffusion et la valorisation des messages d’une marque. Que ce soit dans l’univers print ou digital, ces métiers forment une constellation de compétences complémentaires qui, ensemble, construisent l’image, la cohérence et la performance d’un projet."
 image: "/assets/images/posts/les-metiers-de-la-communication-digitale/thumbnail.jpg"
 author: Marina Créativité
 permalink: /blog/les-metiers-de-la-communication
@@ -95,7 +95,7 @@ Mais dans tous les cas, c’est l’__interconnexion__ entre ces compétences qu
 
 <p class="actions">
  <a class="btn" href="{{ '/contact' | relative_url }}">📩 Contactez-moi</a>
- <span class="note">Premier échange gratuit (1h) pour identifier des leviers concrets.</span>
+ <p class="note">Premier échange gratuit (1h) pour identifier des leviers concrets.</p>
  </p>
 </div>
 
