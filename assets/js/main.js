@@ -37,6 +37,9 @@ const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
 let updtTo = null;
 
 let images = new Array();
+const imageSizeCache = new Map();
+const allImageContainers = new Map();
+let currentActiveTab = null;
 
 window.onload = async () => {
   /* Menu */
@@ -72,7 +75,8 @@ window.onload = async () => {
 
     for(let s of subMenus) {
       s.addEventListener('click', (e) => {
-        loadCreationImages(e.currentTarget.dataset.id);
+        currentActiveTab = e.currentTarget.dataset.id;
+        showCreationImages(e.currentTarget.dataset.id);
 
         for (let sub of subMenus) {
           sub.classList.remove('active');
@@ -81,7 +85,9 @@ window.onload = async () => {
       });
     }
 
-    await loadCreationImages(creationSelectedMenu);
+    currentActiveTab = creationSelectedMenu;
+    initializeAllImages();
+    showCreationImages(creationSelectedMenu);
 
     imageOverlay.addEventListener('click', function(e) {
       if (e.target !== leftBtn && e.target !== rightBtn) {
@@ -157,172 +163,174 @@ window.onload = async () => {
   /********/
 }
 
-const loadCreationImages = async (id, leftBtn, rightBtn) => {
-  resetGrid();
-  
+const initializeAllImages = () => {
   const imageGridElt = document.querySelector('.image-grid');
   const imageOverlay = document.querySelector('.image-overlay');
-
-  imageOverlay.dataset.currentImageId = undefined;
-
-  const creationInfo = CREATION_MENU[id];
-
-  let grid = [[]];
-
-  // * 2 to give enough rows for placing images
-  for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex / 3) * 2; rowIndex++) {
-    grid[rowIndex] = [0, 0, 0]; // 3 columns   
-  }
-
-  grid.push([0, 0, 0]);
-
-  images = new Array();
   
-  for (let i = 1; i <= creationInfo.lastIndex; i++) {
-    const img = document.createElement('img');
-
-    img.dataset.imageId = `${id}_${i}`;
-    img.src = `/assets/images/${img.dataset.imageId}.jpg`;
-    img.loading = 'lazy';
-
-    images.push(img);
-  }
-
-  shuffleArray(images);
-
-  const imgContainers = [];
-
-  for(let i = 0; i < images.length; i++) {
-    const imgContainer = document.createElement('figure');
-    imgContainer.classList.add('image-container');
-
-    const img = images[i];
-
-    img.addEventListener('click', function(e) {
-      imageOverlay.style.display = 'flex';
-      imageOverlay.dataset.currentImageId = e.currentTarget.dataset.imageId;
-    });
-
-    imgContainer.appendChild(img);
-
-    const imageSize = await getImageSize(img.src);
-
-    const r = imageSize.width / imageSize.height;
-
-    imgContainers.push(imgContainer);
-
-    let placed = false;
-    for(let rowIndex = 0; rowIndex < grid.length; rowIndex++) {
-      if (placed) {
-        break;
-      }
-
-      for(let colIndex = 0; colIndex < grid[rowIndex].length; colIndex++) {
-        // place taken
-        if (grid[rowIndex][colIndex] !== 0) {
-          continue;
-        }
-
-        if (r >= LANDSCAPE_THRESHOLD) {
-          if (colIndex + 1 >= grid[rowIndex].length) {
-            continue;
-          }
-          if (grid[rowIndex][colIndex + 1] !== 0) {
-            continue;
-          }
-
-          placed = true;
-
-          grid[rowIndex][colIndex] = i + 1;
-          grid[rowIndex][colIndex + 1] = i + 1;
-
-          imgContainer.style.gridRowStart = rowIndex + 1;
-          imgContainer.style.gridColumnStart = colIndex + 1;
-          imgContainer.style.gridColumnEnd = `span 2`;
-        } else if (r <= PORTRAIT_THRESHOLD) {
-          if (rowIndex + 1 >= grid.length) {
-            continue;
-          }
-          if (grid[rowIndex + 1][colIndex] !== 0) {
-            continue;
-          }
-
-          placed = true;
-
-          grid[rowIndex][colIndex] = i + 1;
-          grid[rowIndex + 1][colIndex] = i + 1;
-
-          imgContainer.style.gridRowStart = rowIndex + 1;
-          imgContainer.style.gridRowEnd = `span 2`;
-          imgContainer.style.gridColumnStart = colIndex + 1;
-        } else {
-          placed = true;
-          grid[rowIndex][colIndex] = i + 1;
-        }
-
-        break;
-      }
-
+  for (const [id, creationInfo] of Object.entries(CREATION_MENU)) {
+    const imgContainers = [];
+    const categoryImages = [];
+    const grid = [[]];
+    
+    for(let rowIndex = 0; rowIndex < (creationInfo.lastIndex / 3) * 2; rowIndex++) {
+      grid[rowIndex] = [0, 0, 0];
     }
-
-    if (updtTo) {
-      clearTimeout(updtTo);
-    }
-
-    updtTo = setTimeout(() => {
-      for (let c of imgContainers) {
-        imageGridElt.appendChild(c);
-      }
+    grid.push([0, 0, 0]);
+    
+    for (let i = 1; i <= creationInfo.lastIndex; i++) {
+      const img = document.createElement('img');
+      img.dataset.imageId = `${id}_${i}`;
+      img.dataset.category = id;
       
-      const loadingElements = imageGridElt.querySelectorAll('.loading');
-      loadingElements.forEach(element => element.remove());
-    }, (0.5 + Math.random()) * 1000);
+      const imgContainer = document.createElement('figure');
+      imgContainer.classList.add('image-container');
+      imgContainer.dataset.category = id;
+      
+      img.addEventListener('click', function(e) {
+        imageOverlay.style.display = 'flex';
+        imageOverlay.dataset.currentImageId = e.currentTarget.dataset.imageId;
+      });
+      
+      imgContainer.appendChild(img);
+      imageGridElt.appendChild(imgContainer);
+      imgContainers.push(imgContainer);
+      categoryImages.push({ img, container: imgContainer, index: i - 1 });
+      
+      img.onload = function() {
+        const categoryId = this.dataset.category;
+        let imageSize;
+        if (imageSizeCache.has(this.src)) {
+          imageSize = imageSizeCache.get(this.src);
+        } else {
+          imageSize = { width: this.naturalWidth, height: this.naturalHeight };
+          imageSizeCache.set(this.src, imageSize);
+        }
+        
+        const r = imageSize.width / imageSize.height;
+        const container = this.parentElement;
+        let placed = false;
+        
+        for(let rowIndex = 0; rowIndex < grid.length; rowIndex++) {
+          if (placed) break;
+          
+          for(let colIndex = 0; colIndex < grid[rowIndex].length; colIndex++) {
+            if (grid[rowIndex][colIndex] !== 0) continue;
+            
+            if (r >= LANDSCAPE_THRESHOLD) {
+              if (colIndex + 1 >= grid[rowIndex].length) continue;
+              if (grid[rowIndex][colIndex + 1] !== 0) continue;
+              
+              placed = true;
+              grid[rowIndex][colIndex] = 1;
+              grid[rowIndex][colIndex + 1] = 1;
+              
+              container.style.gridRowStart = rowIndex + 1;
+              container.style.gridColumnStart = colIndex + 1;
+              container.style.gridColumnEnd = `span 2`;
+            } else if (r <= PORTRAIT_THRESHOLD) {
+              if (rowIndex + 1 >= grid.length) continue;
+              if (grid[rowIndex + 1][colIndex] !== 0) continue;
+              
+              placed = true;
+              grid[rowIndex][colIndex] = 1;
+              grid[rowIndex + 1][colIndex] = 1;
+              
+              container.style.gridRowStart = rowIndex + 1;
+              container.style.gridRowEnd = `span 2`;
+              container.style.gridColumnStart = colIndex + 1;
+            } else {
+              placed = true;
+              grid[rowIndex][colIndex] = 1;
+            }
+            
+            break;
+          }
+        }
+        
+        if (currentActiveTab === categoryId) {
+          container.style.display = 'block';
+          requestAnimationFrame(() => {
+            container.classList.add('visible');
+          });
+        }
+      };
+      
+      img.src = `/assets/images/${img.dataset.imageId}.jpg`;
+    }
+    
+    shuffleArray(categoryImages);
+    allImageContainers.set(id, imgContainers);
   }
+};
 
-  return images;
+const showCreationImages = (id) => {
+  const imageOverlay = document.querySelector('.image-overlay');
+  imageOverlay.dataset.currentImageId = undefined;
+  
+  for (const [categoryId, containers] of allImageContainers.entries()) {
+    const isActive = categoryId === id;
+    containers.forEach(container => {
+      if (isActive) {
+        container.style.display = 'block';
+        requestAnimationFrame(() => {
+          container.classList.add('visible');
+        });
+      } else {
+        container.classList.remove('visible');
+        setTimeout(() => {
+          if (!container.classList.contains('visible')) {
+            container.style.display = 'none';
+          }
+        }, 200);
+      }
+    });
+  }
+  
+  const activeContainers = allImageContainers.get(id) || [];
+  images = activeContainers.map(container => container.querySelector('img')).filter(img => img !== null);
 };
 
 const getImageSize = (url) => {
+  if (imageSizeCache.has(url)) {
+    return Promise.resolve(imageSizeCache.get(url));
+  }
+  
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => {
-      resolve({ width: img.width, height: img.height });
+      const size = { width: img.width, height: img.height };
+      imageSizeCache.set(url, size);
+      resolve(size);
     };
     img.onerror = () => {
-      reject(new   
- Error(`Failed to load image from URL: ${url}`));
+      reject(new Error(`Failed to load image from URL: ${url}`));
     };
     img.src = url;
   });
+}
+
+const preloadAllImageSizes = () => {
+  for (const [id, creationInfo] of Object.entries(CREATION_MENU)) {
+    for (let i = 1; i <= creationInfo.lastIndex; i++) {
+      const imageId = `${id}_${i}`;
+      const url = `/assets/images/${imageId}.jpg`;
+      
+      if (imageSizeCache.has(url)) {
+        continue;
+      }
+      
+      const img = new Image();
+      img.onload = () => {
+        imageSizeCache.set(url, { width: img.width, height: img.height });
+      };
+      img.src = url;
+    }
+  }
 }
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i >= 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-const resetGrid = () => {
-  if (updtTo) {
-    clearTimeout(updtTo);
-  }
-
-  const imageGridElt = document.querySelector('.image-grid');
-
-  imageGridElt.innerHTML = '';
-
-  for (let i = 0; i < 7; i++) {
-    const imgLoader = document.createElement('div');
-
-    imgLoader.className = 'image-container loading';
-
-    if (i === 1) {
-      imgLoader.style = 'grid-row: 1 / span 2; grid-column-start: 2;';
-    } else if (i === 3) {
-      imgLoader.style = 'grid-row-start: 3; grid-column: 1 / span 2;';
-    }
-
-    imageGridElt.appendChild(imgLoader);
   }
 }

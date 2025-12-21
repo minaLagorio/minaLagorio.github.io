@@ -42,8 +42,15 @@
 .image-container {
     margin: 0;
     transform: scale(1.0);
-    transition: transform 0.21s ease-in-out;
+    transition: transform 0.21s ease-in-out, opacity 0.2s ease-in-out;
     cursor: zoom-in;
+    opacity: 0;
+    display: none;
+}
+
+.image-container.visible {
+    opacity: 1;
+    display: block;
 }
 
 .image-container.loading {

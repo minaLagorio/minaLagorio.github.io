@@ -242,6 +242,9 @@ i.icon.malt {
     .container-row:not(.responsive-row) {
         flex-direction: column;
     }
+    #hero.container-row {
+        flex-direction: row;
+    }
     .buttons-container {
         justify-content: initial;
     }
@@ -250,6 +253,36 @@ i.icon.malt {
     }
     #hero img {
         width: 100%;
+    }
+    #cta .bottom-content .container-row {
+        align-items: center;
+        justify-content: center;
+    }
+    #cta .bottom-content .container-item-1,
+    #cta .bottom-content .container-item-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        flex-direction: column;
+        width: 100vw;
+        background-color: $color-bg-y;
+        top: 55px;
+        padding: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        z-index: 10;
+    }
+    .nav-menu li {
+        margin: 6px 0;
+        text-align: center;
+    }
+    .mobile-icon {
+        display: block;
     }
 }
 
