@@ -28,6 +28,39 @@
     width: 500px;
 }
 
+#hero-video {
+    background-color: $color-bg-y;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px $h-gutter;
+}
+#hero-video .hero-video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+}
+#hero-video .hero-video-frame video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+#hero-video .repere {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+    pointer-events: none;
+}
+#hero-video .repere.top-left {
+    top: -32px;
+    left: -32px;
+}
+#hero-video .repere.bottom-right {
+    bottom: -32px;
+    right: -32px;
+}
+
 .logo-link {
     line-height: 100px;
 }
@@ -254,6 +287,9 @@ i.icon.malt {
     #hero img {
         width: 100%;
     }
+    #hero-video {
+        padding: 40px $mobile-h-gutter;
+    }
     #cta .bottom-content .container-row {
         align-items: center;
         justify-content: center;
@@ -287,6 +323,37 @@ i.icon.malt {
 }
 
 @media (max-width: 768px) {
+    #hero.container-row {
+        flex-direction: column;
+    }
+    #hero-video {
+        overflow: hidden;
+    }
+    #hero-video .repere {
+        width: 48px;
+        height: 48px;
+    }
+    #hero-video .repere.top-left {
+        top: -8px;
+        left: -8px;
+    }
+    #hero-video .repere.bottom-right {
+        bottom: -8px;
+        right: -8px;
+    }
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .button ~ .button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    button, a.button {
+        width: 100%;
+        max-width: 260px;
+    }
     #cta .bottom-content img {
         width: 140px;
     }
@@ -333,10 +400,6 @@ i.icon.malt {
         grid-template-columns: 100%;
     }
 
-    #creations .creations-nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
 
     .post-content img {
         width: 100% !important;

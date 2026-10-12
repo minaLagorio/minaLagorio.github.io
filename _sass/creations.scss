@@ -9,7 +9,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
 .creations-nav ul {
@@ -19,16 +20,44 @@
     list-style: none;
     text-transform: uppercase;
     padding: 0;
+    margin: 0;
+    gap: 8px 28px;
 }
 
 .creations-nav ul li {
     font-family: 'Montserrat';
-    margin-right: 25px;
     font-size: 0.8rem;
+    font-weight: 500;
     cursor: pointer;
+    position: relative;
+    padding-bottom: 4px;
+    color: rgba(0, 0, 0, 0.55);
+    transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.creations-nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.creations-nav ul li:hover {
+    color: rgba(0, 0, 0, 0.85);
+}
+
 .creations-nav ul li.active {
-    font-weight: bold;
+    color: #000;
+}
+
+.creations-nav ul li.active::after {
+    transform: scaleX(1);
 }
 
 .image-grid {
@@ -36,16 +65,21 @@
     justify-content: center;
     grid-template-columns: repeat(3, calc(33vw - 25px));
     grid-auto-rows: calc(33vw - 25px);
-    gap: 10px;
+    gap: 14px;
 }
 
 .image-container {
     margin: 0;
-    transform: scale(1.0);
-    transition: transform 0.21s ease-in-out, opacity 0.2s ease-in-out;
+    transform: scale(1);
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     cursor: zoom-in;
     opacity: 0;
     display: none;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
 .image-container.visible {
@@ -54,37 +88,56 @@
 }
 
 .image-container.loading {
-    background-color: #000000;
-    opacity: 0.09;
+    display: block;
+    opacity: 0.12;
     animation: blink 1.6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.image-container.loading img {
+    opacity: 0;
 }
 
 @keyframes blink {
-    0% { opacity: 0.09; }
-    50% { opacity: 0.12; }
-    100% { opacity: 0.09; }
+    0% { opacity: 0.1; }
+    50% { opacity: 0.16; }
+    100% { opacity: 0.1; }
 }
 
-.image-container:hover {
-    transform: scale(1.02);
+.image-container.visible:hover {
+    transform: scale(1.015);
+    filter: brightness(1.03);
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 #creations .image-overlay {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.62);
     z-index: 11;
     backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#creations .image-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 #creations .image-overlay .image {
@@ -103,20 +156,29 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease;
     cursor: pointer;
+    opacity: 0.85;
+    z-index: 2;
 }
+
+#creations .image-overlay .nav-icon:hover {
+    opacity: 1;
+}
+
 #creations .image-overlay .left-button:hover {
-    transform: translateX(-3px);
+    transform: translateX(-4px);
 }
+
 #creations .image-overlay .right-button:hover {
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
 #creations .image-overlay .left-button {
     left: 0;
     background-image: url(/assets/images/left.svg);
 }
+
 #creations .image-overlay .right-button {
     right: 0;
     background-image: url(/assets/images/right.svg);
@@ -126,8 +188,46 @@
     width: 80%;
     object-fit: contain;
     max-height: 90%;
+    opacity: 0;
+    transform: scale(0.985);
+    transition:
+        opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.creation-link:hover {
-    font-weight: 600;
+#creations .image-overlay .image img.is-shown {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .creations-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .creations-nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+        gap: 0 22px;
+    }
+
+    .creations-nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .creations-nav ul li {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, calc(50vw - 18px));
+        grid-auto-rows: calc(50vw - 18px);
+        gap: 12px;
+    }
 }
