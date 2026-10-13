@@ -33,6 +33,7 @@ const BASE_HEIGHT = 1459;
 
 const LANDSCAPE_THRESHOLD = BASE_WIDTH / BASE_HEIGHT;
 const PORTRAIT_THRESHOLD = BASE_HEIGHT / BASE_WIDTH;
+const MOBILE_MQ = '(max-width: 768px)';
 
 const FADE_MS = 380;
 const STAGGER_MS = 38;
@@ -48,6 +49,12 @@ let currentActiveTab = null;
 let hideTimeouts = [];
 let overlaySwapTimeout = null;
 let isOverlayOpen = false;
+let currentGridCols = 0;
+
+const getGridColumnCount = () =>
+  window.matchMedia(MOBILE_MQ).matches ? 2 : 3;
+
+const createEmptyRow = (cols) => Array.from({ length: cols }, () => 0);
 
 window.onload = async () => {
   /* Menu */
@@ -230,24 +237,24 @@ const setOverlayImage = (imageId, animate) => {
   }
 };
 
-const placeImageInGrid = (container, imageSize, grid) => {
+const placeImageInGrid = (container, imageSize, grid, cols) => {
   const r = imageSize.width / imageSize.height;
   let placed = false;
 
   const ensureRows = (neededIndex) => {
     while (grid.length <= neededIndex) {
-      grid.push([0, 0, 0]);
+      grid.push(createEmptyRow(cols));
     }
   };
 
   for (let rowIndex = 0; rowIndex < grid.length; rowIndex++) {
     if (placed) break;
 
-    for (let colIndex = 0; colIndex < grid[rowIndex].length; colIndex++) {
+    for (let colIndex = 0; colIndex < cols; colIndex++) {
       if (grid[rowIndex][colIndex] !== 0) continue;
 
       if (r >= LANDSCAPE_THRESHOLD) {
-        if (colIndex + 1 >= grid[rowIndex].length) continue;
+        if (colIndex + 1 >= cols) continue;
         if (grid[rowIndex][colIndex + 1] !== 0) continue;
 
         placed = true;
@@ -285,8 +292,9 @@ const placeImageInGrid = (container, imageSize, grid) => {
   }
 
   if (!placed) {
-    grid.push([1, 0, 0]);
+    grid.push(createEmptyRow(cols));
     const rowIndex = grid.length - 1;
+    grid[rowIndex][0] = 1;
     container.style.gridRowStart = rowIndex + 1;
     container.style.gridColumnStart = 1;
     container.style.gridColumnEnd = '';
@@ -294,16 +302,38 @@ const placeImageInGrid = (container, imageSize, grid) => {
   }
 };
 
+const resetCategoryGrid = (id, cols) => {
+  const creationInfo = CREATION_MENU[id];
+  const rowCount = Math.ceil(creationInfo.lastIndex / cols) * 2 + 2;
+  const grid = Array.from({ length: rowCount }, () => createEmptyRow(cols));
+  categoryGrids.set(id, grid);
+  return grid;
+};
+
+const relayoutCategory = (id, cols) => {
+  const grid = resetCategoryGrid(id, cols);
+  const containers = allImageContainers.get(id) || [];
+
+  for (const container of containers) {
+    const img = container.querySelector('img');
+    if (!img?.src || !img.naturalWidth) continue;
+
+    const imageSize = imageSizeCache.get(img.src) || {
+      width: img.naturalWidth,
+      height: img.naturalHeight,
+    };
+    imageSizeCache.set(img.src, imageSize);
+    placeImageInGrid(container, imageSize, grid, cols);
+  }
+};
+
 const initializeAllImages = () => {
   const imageGridElt = document.querySelector('.image-grid');
+  currentGridCols = getGridColumnCount();
 
   for (const [id, creationInfo] of Object.entries(CREATION_MENU)) {
     const imgContainers = [];
-    const grid = [];
-
-    for (let rowIndex = 0; rowIndex < Math.ceil(creationInfo.lastIndex / 3) * 2 + 2; rowIndex++) {
-      grid[rowIndex] = [0, 0, 0];
-    }
+    resetCategoryGrid(id, currentGridCols);
 
     const indices = Array.from({ length: creationInfo.lastIndex }, (_, i) => i + 1);
     shuffleArray(indices);
@@ -334,7 +364,7 @@ const initializeAllImages = () => {
 
         const container = this.parentElement;
         const categoryGrid = categoryGrids.get(categoryId);
-        placeImageInGrid(container, imageSize, categoryGrid);
+        placeImageInGrid(container, imageSize, categoryGrid, currentGridCols);
 
         container.classList.remove('loading');
 
@@ -355,9 +385,17 @@ const initializeAllImages = () => {
       imgContainers.push(imgContainer);
     }
 
-    categoryGrids.set(id, grid);
     allImageContainers.set(id, imgContainers);
   }
+
+  window.addEventListener('resize', () => {
+    const cols = getGridColumnCount();
+    if (cols === currentGridCols) return;
+    currentGridCols = cols;
+    for (const id of Object.keys(CREATION_MENU)) {
+      relayoutCategory(id, cols);
+    }
+  });
 };
 
 const loadCategorySources = (id) => {
