@@ -151,6 +151,10 @@
     pointer-events: auto;
 }
 
+#creations .image-overlay {
+    touch-action: pan-y;
+}
+
 #creations .image-overlay .image {
     display: flex;
     justify-content: center;
@@ -330,18 +334,11 @@
         right: 16px;
     }
 
-    #creations .image-overlay .left-button,
-    #creations .image-overlay .right-button {
-        top: auto;
-        bottom: 24px;
-        margin-top: 0;
-    }
-
     #creations .image-overlay .left-button {
-        left: 16px;
+        left: 8px;
     }
 
     #creations .image-overlay .right-button {
-        right: 16px;
+        right: 8px;
     }
 }

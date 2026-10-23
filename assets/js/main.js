@@ -39,6 +39,7 @@ const FADE_MS = 380;
 const STAGGER_MS = 38;
 const STAGGER_CAP_MS = 420;
 const OVERLAY_CROSSFADE_MS = 180;
+const SWIPE_MIN_PX = 50;
 
 let images = [];
 const imageSizeCache = new Map();
@@ -154,6 +155,31 @@ window.onload = async () => {
       e.stopPropagation();
       navigateOverlay(1);
     });
+
+    /* Swipe (mobile) : glisser vers la gauche = image suivante */
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchTracking = false;
+
+    imageOverlay.addEventListener('touchstart', (e) => {
+      if (!isOverlayOpen || e.touches.length !== 1) {
+        touchTracking = false;
+        return;
+      }
+      touchTracking = true;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    imageOverlay.addEventListener('touchend', (e) => {
+      if (!touchTracking) return;
+      touchTracking = false;
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      navigateOverlay(dx < 0 ? 1 : -1);
+    }, { passive: true });
 
     document.addEventListener('keydown', (e) => {
       if (!isOverlayOpen) return;
