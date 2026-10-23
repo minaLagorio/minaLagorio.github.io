@@ -135,6 +135,9 @@
 }
 
 // Les cinq accompagnements
+#accomp #accompagnements {
+    scroll-margin-top: calc(#{$nav-height} + 20px);
+}
 #accomp .offre {
     padding-block: clamp(64px, 8vw, 112px);
     border-top: 1px solid #000;
