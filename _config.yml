@@ -29,6 +29,8 @@ author: Marina Jaquet
 url: "https://marina-creativite.fr" # the base hostname & protocol for your site, e.g. http://example.com
 behance_url: https://www.behance.net/marina_creativite
 malt_url: https://www.malt.fr/profile/marinacreativite
+# Lien du bouton « Prendre rendez-vous »
+rdv_url: "https://calendly.com/jaquetmarina/30min"
 linkedin_url: https://www.linkedin.com/in/jaquet-marina-creativite/
 social:
   name: Marina Jaquet
@@ -38,17 +40,18 @@ social:
     - https://www.linkedin.com/in/jaquet-marina-creativite/
 locale: fr_FR
 navigation:
-  - text: "Mes créations"
+  - text: "Projets"
     url: /creations
-    color: "color-m"
-  - text: "Qui suis-je"
-    url: /apropos
-    color: "color-y"
-  - text: "Me contacter"
-    url: /contact
     color: "color-c"
+  - text: "Accompagnements"
+    url: /accompagnements
+    color: "color-m"
   - text: "Blog"
     url: /blog
+    color: "color-y"
+  - text: "Contact"
+    url: /contact
+    color: "color-n"
 
 # Build settings
 theme: minima

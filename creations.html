@@ -3,19 +3,25 @@ layout: page
 ---
 <section id="creations">
     <div class="image-overlay">
-        <div class="nav-icon left-button"></div>
+        <button type="button" class="close-button" aria-label="Fermer"></button>
+        <button type="button" class="nav-icon left-button" aria-label="Image précédente"></button>
         <figure class="image"></figure>
-        <div class="nav-icon right-button"></div>
+        <button type="button" class="nav-icon right-button" aria-label="Image suivante"></button>
     </div>
     <div class="creations-nav">
-        <ul>
-            <li class="creation-link active" data-id="imprime">Design imprimés</li>
-            <li class="creation-link" data-id="illustration">Illustrations</li>
-            <li class="creation-link" data-id="typo">Typographies</li>
-            <li class="creation-link" data-id="numerique">Design numériques</li>
-            <li class="creation-link" data-id="photo">Photos</li>
-        </ul>
-        <a class="button outline small" href="{{ site.behance_url }}" target="_blank">Behance</a>
+        <div class="creation-menu">
+            <button type="button" class="creation-toggle" aria-expanded="false" aria-controls="creation-list">
+                <span class="creation-toggle-label">Design imprimés</span>
+            </button>
+            <ul id="creation-list">
+                <li class="creation-link active" data-id="imprime">Design imprimés</li>
+                <li class="creation-link" data-id="illustration">Illustrations</li>
+                <li class="creation-link" data-id="typo">Typographies</li>
+                <li class="creation-link" data-id="numerique">Design numériques</li>
+                <li class="creation-link" data-id="photo">Photos</li>
+            </ul>
+        </div>
+        <a class="button outline small" href="{{ site.behance_url }}" target="_blank">Projets</a>
     </div>
     <div class="image-grid">
     </div>

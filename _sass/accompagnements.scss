@@ -1,0 +1,505 @@
+// Page « Accompagnements » : tout est limité à #accomp pour ne pas toucher aux autres pages.
+#accomp {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 1.75;
+    color: #000;
+    overflow-x: hidden;
+    --accent: #000;
+}
+
+#accomp p,
+#accomp ul,
+#accomp dl,
+#accomp dd {
+    margin: 0;
+}
+#accomp p,
+#accomp li {
+    font-size: 1rem;
+}
+#accomp h1,
+#accomp h2,
+#accomp h3 {
+    margin: 0;
+    line-height: 1.2;
+}
+#accomp a:not(.button) {
+    color: #000;
+    text-decoration: underline;
+}
+#accomp .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+#accomp .conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 56px);
+}
+#accomp .cible {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: #000;
+}
+// Boutons côte à côte s'il y a la place, sinon empilés et de même largeur
+#accomp .groupe-btn,
+#accomp .appel__boutons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 560px;
+}
+#accomp .appel__boutons {
+    max-width: none;
+}
+#accomp .button ~ .button {
+    margin-left: 0;
+}
+#accomp .button {
+    width: 100%;
+    max-width: none;
+    padding: 8px 20px;
+    letter-spacing: .08em;
+    flex-direction: column;
+}
+#accomp .offre__pied .button {
+    width: auto;
+    min-width: 200px;
+}
+#accomp .appel__boutons .button {
+    min-height: 50px;
+}
+#accomp .btn__detail {
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+// En-tête
+#accomp .entete {
+    background: $color-gray;
+    padding-block: calc(#{$nav-height} + clamp(48px, 6vw, 80px)) clamp(64px, 8vw, 112px);
+}
+#accomp .entete__grille {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+}
+#accomp .entete__texte {
+    flex: 1 1 min(560px, 100%);
+    min-width: 0;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+#accomp .entete h1 {
+    font-size: clamp(32px, 3.2vw, 38px);
+    line-height: 1.15;
+}
+#accomp .entete__sous-titre {
+    font-family: 'LibreBodoni';
+    font-size: clamp(20px, 2vw, 24px);
+    line-height: 1.45;
+    max-width: 34ch;
+}
+#accomp .entete__filet {
+    width: 56px;
+    height: 3px;
+    background: $color-m;
+}
+
+// Introduction
+#accomp .intro {
+    padding-block: clamp(72px, 9vw, 120px);
+}
+#accomp .intro p {
+    max-width: 66ch;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+// Les cinq accompagnements
+#accomp .offre {
+    padding-block: clamp(64px, 8vw, 112px);
+    border-top: 1px solid #000;
+}
+#accomp .offre--creme { background: $color-bg-y; }
+#accomp .offre--bleu { background: $color-bg-c; }
+#accomp .offre--gris { background: $color-gray; }
+#accomp .offre--blanc { background: #FFF; }
+#accomp .offre--rose { background: $color-bg-m; }
+#accomp .offre--c { --accent: #{$color-c}; }
+#accomp .offre--m { --accent: #{$color-m}; }
+#accomp .offre--n { --accent: #000; }
+#accomp .offre__grille {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 40px clamp(40px, 7vw, 112px);
+}
+#accomp .offre__entete {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#accomp .offre__numero {
+    font-family: 'LibreBodoni';
+    font-weight: 700;
+    font-size: 96px;
+    line-height: .9;
+    letter-spacing: -.02em;
+    margin: 0 0 8px;
+    color: var(--accent);
+}
+#accomp .offre h2 {
+    font-size: clamp(22px, 2vw, 26px);
+    line-height: 1.25;
+}
+#accomp .offre__accroche {
+    font-weight: 700;
+}
+#accomp .offre__cible {
+    font-style: italic;
+    font-size: 15px;
+}
+#accomp .offre__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+#accomp .puces {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #000;
+}
+#accomp .puces li {
+    position: relative;
+    padding: 14px 0 14px 28px;
+    border-bottom: 1px solid #000;
+    line-height: 1.7;
+}
+#accomp .puces li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 23px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+}
+#accomp .reperes {
+    border-top: 1px solid #000;
+}
+#accomp .repere {
+    display: grid;
+    grid-template-columns: 12px minmax(0, 11rem) minmax(0, 1fr);
+    column-gap: 20px;
+    row-gap: 6px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+}
+#accomp .repere__pastille {
+    width: 12px;
+    height: 12px;
+    align-self: start;
+    margin-top: 6px;
+    background: var(--accent);
+}
+#accomp .repere__label {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    line-height: 1.7;
+}
+#accomp .repere__texte {
+    line-height: 1.7;
+}
+#accomp .offre__pied {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    padding-top: 32px;
+    border-top: 1px solid #000;
+}
+#accomp .tarif {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    min-height: 48px;
+    padding: 12px 0;
+}
+#accomp .tarif__montant {
+    font-family: 'LibreBodoni';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+// Comment ça se passe
+#accomp .etapes {
+    padding-block: clamp(80px, 10vw, 136px);
+    background: #FFF;
+    border-top: 1px solid #000;
+}
+#accomp .titre-section {
+    font-size: clamp(24px, 2.4vw, 30px);
+    margin-bottom: clamp(40px, 5vw, 64px);
+}
+#accomp .etapes__liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px clamp(32px, 4vw, 64px);
+}
+#accomp .etape {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid #000;
+}
+#accomp .etape__numero {
+    font-family: 'LibreBodoni';
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+}
+#accomp .etape h3 {
+    font-size: 22px;
+}
+#accomp .etape__marque {
+    display: block;
+    width: 32px;
+    height: 6px;
+}
+#accomp .etape:nth-child(1) .etape__marque { background: $color-m; }
+#accomp .etape:nth-child(2) .etape__marque { background: $color-c; }
+#accomp .etape:nth-child(3) .etape__marque { background: $color-y; }
+
+// Ils m'ont fait confiance
+#accomp .confiance {
+    padding-block: clamp(64px, 8vw, 104px);
+    background: $color-bg-y;
+    border-top: 1px solid #000;
+}
+#accomp .confiance__liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+#accomp .confiance__lien {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 96px;
+    padding: 16px;
+    background: #FFF;
+    border: 1px solid $color-gray;
+}
+#accomp .confiance__lien:hover {
+    border-color: #000;
+}
+#accomp .confiance__logo {
+    display: block;
+    max-width: 100%;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+// Questions fréquentes
+#accomp .faq {
+    padding-block: clamp(80px, 10vw, 136px);
+    background: #FFF;
+    border-top: 1px solid #000;
+}
+#accomp .faq__grille {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 32px clamp(40px, 7vw, 112px);
+}
+#accomp .faq__liste {
+    border-top: 1px solid #000;
+}
+#accomp .faq__item {
+    border-bottom: 1px solid #000;
+}
+#accomp .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 64px;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: 'LibreBodoni';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+#accomp .faq__question::-webkit-details-marker {
+    display: none;
+}
+#accomp .faq__signe {
+    position: relative;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+}
+#accomp .faq__signe::before,
+#accomp .faq__signe::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 18px;
+    height: 2px;
+    background: #000;
+    transition: transform .2s;
+}
+#accomp .faq__signe::after {
+    transform: rotate(90deg);
+}
+#accomp .faq__item[open] .faq__signe::after {
+    transform: rotate(0deg);
+}
+#accomp .faq__reponse {
+    padding: 0 48px 28px 0;
+    max-width: 66ch;
+}
+
+// Bande finale
+#accomp .appel {
+    position: relative;
+    background: $color-bg-c;
+    padding-block: clamp(88px, 10vw, 136px) clamp(80px, 10vw, 128px);
+    border-top: 1px solid #000;
+}
+#accomp .appel__gamme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: 10px;
+}
+#accomp .appel__gamme span:nth-child(1) { background: $color-c; }
+#accomp .appel__gamme span:nth-child(2) { background: $color-m; }
+#accomp .appel__gamme span:nth-child(3) { background: $color-y; }
+#accomp .appel__gamme span:nth-child(4) { background: #000; }
+#accomp .appel__grille {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+#accomp .appel__texte {
+    flex: 1 1 min(520px, 100%);
+    min-width: 0;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#accomp .appel h2 {
+    font-size: clamp(28px, 3vw, 38px);
+}
+#accomp .appel p {
+    font-size: 17px;
+}
+#accomp .appel__action {
+    flex: 1 1 min(520px, 100%);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+@media (max-width: 860px) {
+    #accomp .offre__grille,
+    #accomp .faq__grille,
+    #accomp .etapes__liste {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    #accomp .offre__numero {
+        font-size: 72px;
+    }
+    #accomp .offre__pied {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #accomp .offre__pied .button {
+        width: 100%;
+        max-width: 340px;
+    }
+    #accomp .etape {
+        align-items: center;
+        text-align: center;
+    }
+    #accomp .intro p {
+        text-align: left;
+    }
+    #accomp .faq__reponse {
+        padding-right: 0;
+    }
+}
+@media (max-width: 700px) {
+    #accomp .repere {
+        grid-template-columns: 12px minmax(0, 1fr);
+    }
+    #accomp .repere__texte {
+        grid-column: 2;
+    }
+}
+@media (max-width: 700px) {
+    #accomp .confiance__liste {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+    #accomp .confiance__lien {
+        min-height: 72px;
+        padding: 8px;
+    }
+    #accomp .confiance__logo {
+        max-height: 40px;
+    }
+    #accomp .etapes .titre-section {
+        text-align: center;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    #accomp * {
+        transition: none !important;
+    }
+}

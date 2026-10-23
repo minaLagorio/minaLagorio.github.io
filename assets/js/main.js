@@ -51,8 +51,7 @@ let overlaySwapTimeout = null;
 let isOverlayOpen = false;
 let currentGridCols = 0;
 
-const getGridColumnCount = () =>
-  window.matchMedia(MOBILE_MQ).matches ? 2 : 3;
+const getGridColumnCount = () => 3;
 
 const createEmptyRow = (cols) => Array.from({ length: cols }, () => 0);
 
@@ -83,6 +82,27 @@ window.onload = async () => {
     const imageOverlay = document.querySelector('.image-overlay');
     const leftBtn = document.querySelector('.left-button');
     const rightBtn = document.querySelector('.right-button');
+    const closeBtn = document.querySelector('.close-button');
+
+    /* Menu déroulant des thèmes (mobile) */
+    const creationMenu = document.querySelector('.creation-menu');
+    const creationToggle = document.querySelector('.creation-toggle');
+    const toggleLabel = document.querySelector('.creation-toggle-label');
+    const setMenuOpen = (open) => {
+      creationMenu.classList.toggle('open', open);
+      creationToggle.setAttribute('aria-expanded', String(open));
+    };
+    const updateToggleLabel = () => {
+      const active = document.querySelector('.creation-link.active');
+      if (active) toggleLabel.textContent = active.textContent;
+    };
+    creationToggle.addEventListener('click', () => {
+      setMenuOpen(!creationMenu.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!creationMenu.contains(e.target)) setMenuOpen(false);
+    });
+    updateToggleLabel();
 
     for (const s of subMenus) {
       s.addEventListener('click', (e) => {
@@ -94,6 +114,8 @@ window.onload = async () => {
           sub.classList.toggle('active', sub === e.currentTarget);
         }
         showCreationImages(id);
+        updateToggleLabel();
+        setMenuOpen(false);
       });
     }
 
@@ -114,6 +136,11 @@ window.onload = async () => {
       if (e.target !== leftBtn && e.target !== rightBtn) {
         closeOverlay();
       }
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeOverlay();
     });
 
     leftBtn.addEventListener('click', (e) => {
