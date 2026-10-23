@@ -86,9 +86,10 @@ button, a.button {
     width: 260px;
     background-color: #000;
     color: $color-text-light;
-    height: 42px;
-    padding: 4px;
+    min-height: 44px;
+    padding: 4px 8px;
     font-size: 0.8rem;
+    box-sizing: border-box;
 }
 a.button {
     line-height: 16px;

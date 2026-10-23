@@ -13,6 +13,14 @@
     margin-bottom: 24px;
 }
 
+.creation-menu {
+    position: relative;
+}
+
+.creation-toggle {
+    display: none;
+}
+
 .creations-nav ul {
     display: flex;
     flex-direction: row;
@@ -126,7 +134,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.62);
+    background-color: rgba(255, 255, 255, 0.94);
     z-index: 11;
     backdrop-filter: blur(8px);
     opacity: 0;
@@ -152,39 +160,55 @@
     margin: 0;
 }
 
-#creations .image-overlay .nav-icon {
+#creations .image-overlay .nav-icon,
+#creations .image-overlay .close-button {
     position: absolute;
-    height: 100%;
-    width: 90px;
-    background-size: auto;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease;
+    background-size: 24px;
     cursor: pointer;
-    opacity: 0.85;
     z-index: 2;
+    transition: border-color 0.28s ease, background-color 0.28s ease;
 }
 
-#creations .image-overlay .nav-icon:hover {
-    opacity: 1;
+#creations .image-overlay .nav-icon:hover,
+#creations .image-overlay .close-button:hover {
+    border-color: #000;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
-#creations .image-overlay .left-button:hover {
-    transform: translateX(-4px);
+#creations .image-overlay .nav-icon:focus-visible,
+#creations .image-overlay .close-button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }
 
-#creations .image-overlay .right-button:hover {
-    transform: translateX(4px);
+#creations .image-overlay .close-button {
+    top: 24px;
+    right: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1" stroke-linecap="square"><path d="M6 6L18 18M18 6L6 18"/></svg>');
+}
+
+#creations .image-overlay .left-button,
+#creations .image-overlay .right-button {
+    top: 50%;
+    margin-top: -22px;
 }
 
 #creations .image-overlay .left-button {
-    left: 0;
-    background-image: url(/assets/images/left.svg);
+    left: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1" stroke-linecap="square"><path d="M14.5 5L7.5 12L14.5 19"/></svg>');
 }
 
 #creations .image-overlay .right-button {
-    right: 0;
-    background-image: url(/assets/images/right.svg);
+    right: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1" stroke-linecap="square"><path d="M9.5 5L16.5 12L9.5 19"/></svg>');
 }
 
 #creations .image-overlay .image img {
@@ -205,25 +229,119 @@
 
 @media (max-width: 768px) {
     .creations-nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 16px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .creation-menu {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .creation-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        min-height: 44px;
+        padding: 4px 14px;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        border-radius: 0;
+        background-color: transparent;
+        color: #000;
+        font-family: 'Montserrat';
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .creation-toggle::after {
+        content: '';
+        flex: 0 0 18px;
+        height: 18px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.25" stroke-linecap="square"><path d="M5 9L12 16L19 9"/></svg>') center / contain no-repeat;
+        transition: transform 0.28s ease;
+    }
+
+    .creation-menu.open .creation-toggle::after {
+        transform: rotate(180deg);
     }
 
     .creations-nav ul {
-        flex-wrap: wrap;
-        overflow: visible;
-        gap: 10px 16px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0;
+        margin-top: -1px;
+        background-color: #FFF;
+        border: 1px solid #000;
+    }
+
+    .creation-menu.open ul {
+        display: flex;
     }
 
     .creations-nav ul li {
-        white-space: nowrap;
+        padding: 14px;
+        min-height: 44px;
+        box-sizing: border-box;
         font-size: 0.72rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        color: #000;
+    }
+
+    .creations-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .creations-nav ul li::after {
+        display: none;
+    }
+
+    .creations-nav ul li.active {
+        font-weight: 700;
+    }
+
+    .creations-nav .button {
+        flex: 0 0 auto;
     }
 
     .image-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        grid-auto-rows: calc((100cqw - 12px) / 2);
+        gap: 8px;
+        grid-auto-rows: calc((100cqw - 16px) / 3);
+    }
+
+    #creations .image-overlay .image img {
+        width: 92%;
+        max-height: 78%;
+    }
+
+    #creations .image-overlay .close-button {
+        top: 16px;
+        right: 16px;
+    }
+
+    #creations .image-overlay .left-button,
+    #creations .image-overlay .right-button {
+        top: auto;
+        bottom: 24px;
+        margin-top: 0;
+    }
+
+    #creations .image-overlay .left-button {
+        left: 16px;
+    }
+
+    #creations .image-overlay .right-button {
+        right: 16px;
     }
 }

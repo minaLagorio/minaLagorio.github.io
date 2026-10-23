@@ -1,7 +1,178 @@
 #contact {
     z-index: 1;
     position: relative;
-    padding-bottom: 140px;
+    background-color: $color-bg-y;
+}
+
+#contact .right-content {
+    padding-top: 20px;
+}
+
+#contact .container-item-1 {
+    align-self: flex-start;
+}
+
+#contact .content, #expertise .content {
+    padding: 0 $h-gutter;
+    z-index: 0;
+    border-top: 150px solid white;
+}
+
+#contact .content .marina img {
+    display: block;
+    position: relative;
+    align-self: flex-start;
+    width: 200px;
+    top: -45px;
+    padding: 5px;
+}
+
+// Grille de logos, identique à celle des autres pages
+#contact .logo-grid {
+    list-style: none;
+    margin: 20px 0 30px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+#contact .logo-card {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    min-height: 96px;
+    padding: 16px;
+    background: #FFF;
+    border: 1px solid $color-gray;
+}
+#contact .logo-card:hover {
+    border-color: #000;
+}
+#contact .logo-img {
+    display: block;
+    max-width: 100%;
+    max-height: 56px;
+    margin: 0;
+    object-fit: contain;
+}
+
+#contact .container-col.centered-content {
+    align-items: center;
+    gap: 15px;
+}
+
+#contact .container-col.centered-content .button {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#contact #title {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+#contact .background-heading {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/assets/images/deco_apropos_1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+#contact #expertise {
+    background-color: transparent;
+    border-top: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#contact #expertise .container-item-1 {
+    margin-right: 50px;
+}
+
+@media (max-width: 1030px) {
+    #contact #expertise.container-row {
+        flex-direction: column;
+    }
+    #contact #expertise .container-item-1,
+    #contact #expertise .container-item-2 {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    #contact #expertise .container-item-1 {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    #contact #expertise .container-row.spaced-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact #title .marina {
+        margin-bottom: -45px;
+    }
+    #contact #title .right-content {
+        padding-top: 0;
+    }
+    #contact #title h1 {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    #contact #title .subtitle {
+        margin: 10px 0 20px;
+        font-size: 0.8rem;
+    }
+    #contact .button ~ .button {
+        margin-left: 0;
+    }
+    #contact .button {
+        margin-top: 10px;
+    }
+    #contact .background-heading {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+#contact .subtitle {
+    margin-bottom: 30px;
+}
+
+// Tous les boutons de la page ont la même largeur
+#contact .buttons-container,
+#contact .social-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: start;
+    gap: 10px 25px;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+#contact .button,
+#contact .buttons-container .button,
+#contact .social-buttons .button {
+    display: flex;
+    width: 260px;
+    max-width: 100%;
+    margin: 0;
+}
+
+#contact #contact-info {
+    padding: 70px $h-gutter 140px;
     background-color: $color-bg-c;
     background-image: url(/assets/images/print_test_cmyb.svg);
     background-size: 500px;
@@ -9,27 +180,44 @@
     background-repeat: no-repeat;
 }
 
-#contact .right-content {
-    padding-top: 20px;
+#contact #contact-info .container-row {
+    gap: 80px;
 }
 
-#contact .content {
-    padding: 0 $h-gutter;
-    background-color: $color-bg-c;
-    z-index: 0;
-    border-top: 150px solid white;
+#contact #contact-info h2 {
+    margin-top: 0;
 }
 
-#contact .content img {
-    display: block;
-    position: relative;
-    align-self: flex-start;
-    width: 200px;
-    top: -60px;
-    padding: 5px;
+#contact #contact-info .buttons-container {
+    margin-top: 20px;
 }
 
-#contact .button ~ .button {
-    margin-left: 0;
-    margin-top: 10px;
+
+@media (max-width: 1200px) {
+    #contact #contact-info {
+        padding: 70px $mobile-h-gutter 140px;
+    }
+}
+
+@media (max-width: 1030px) {
+    #contact #contact-info .container-row {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact #contact-info {
+        background-position: center calc(100% - 50px);
+        background-size: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact .logo-card {
+        min-height: 72px;
+        padding: 8px;
+    }
+    #contact .logo-img {
+        max-height: 40px;
+    }
 }

@@ -16,5 +16,10 @@
 
         gtag('config', 'G-F1V2DX05WV');
     </script>
+    {% if page.seo_title %}
+    <title>{{ page.seo_title | escape }}</title>
+    {% seo title=false %}
+    {% else %}
     {% seo %}
+    {% endif %}
 </head>
