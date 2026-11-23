@@ -6,7 +6,7 @@
 }
 
 #blog .featured {
-    background-color: $color-gray;
+    background-color: $color-bg-y;
     padding: 20px $h-gutter;
     padding-top: 110px;
 }
@@ -15,10 +15,14 @@
     margin-bottom: 40px;
 }
 
+#blog .max-width {
+    max-width: none;
+}
+
 #blog .post-list {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     list-style: none;
     padding: 0 $h-gutter;
 }

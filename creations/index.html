@@ -1,0 +1,27 @@
+---
+layout: page
+title: Projets
+description: "Les marques accompagnées par Marina Créativité : AI2H, Serjaq, Airplum. Découvrez leur image de marque, ou parcourez la galerie de créations."
+---
+<section id="projets">
+    <div class="projets-header">
+        <div class="projets-titre">
+            <span class="filet" aria-hidden="true"></span>
+            <h1>Projets</h1>
+        </div>
+        <a class="button outline small" href="/creations/galerie">Galerie</a>
+    </div>
+    <ul class="projets-grid">
+        {% for brand in site.data.brands %}
+        <li>
+            <a class="projet-card" href="{{ brand.url }}">
+                <span class="projet-thumb">
+                    <img src="{{ brand.thumb }}" alt="{{ brand.thumb_alt }}" loading="lazy" decoding="async" style="object-position: {{ brand.thumb_pos | default: '50% 50%' }}" />
+                </span>
+                <span class="projet-name">{{ brand.name }}</span>
+                <span class="projet-tagline">{{ brand.tagline }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>

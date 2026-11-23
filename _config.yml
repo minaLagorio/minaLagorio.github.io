@@ -41,7 +41,7 @@ social:
 locale: fr_FR
 navigation:
   - text: "Projets"
-    url: /creations
+    url: /creations/
     color: "color-c"
   - text: "Accompagnements"
     url: /accompagnements

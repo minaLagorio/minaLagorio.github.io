@@ -1,0 +1,22 @@
+# Marques présentées dans Projets. Pour en ajouter une :
+# 1. une entrée ici, 2. _includes/brands/<slug>.html (planche), 3. creations/<slug>.html (front matter), 4. ses images dans assets/images/brands/<slug>/
+- slug: ai2h
+  name: AI2H
+  url: /creations/ai2h
+  tagline: Expertise logicielle à la demande
+  thumb: /assets/images/brands/ai2h/illustration-humain-ia.webp
+  thumb_alt: "Illustration : deux développeurs échangent autour d'un écran de code, une IA et un bouclier « code sécurisé » à droite"
+- slug: serjaq
+  name: Serjaq
+  url: /creations/serjaq
+  tagline: Céramique artisanale en grès, Nontron (Dordogne)
+  thumb: /assets/images/brands/serjaq/cafe.jpg
+  thumb_alt: "Deux bols en grès, l'un à l'émail noir, l'autre crème, parmi des grains de café"
+  thumb_pos: 40% 60%
+- slug: airplum
+  name: Airplum
+  url: /creations/airplum
+  tagline: Le confort français, depuis 1947
+  thumb: /assets/images/brands/airplum/djerba.jpg
+  thumb_alt: "Mules bleu marine Airplum posées sur une dalle de marbre, des plumes flottent près d'un guéridon et d'un plaid crème"
+  thumb_pos: 70% 60%

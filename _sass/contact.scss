@@ -203,6 +203,9 @@
     #contact #contact-info .container-row {
         gap: 20px;
     }
+    #contact .parcours-video {
+        margin: 30px 0 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -219,5 +222,23 @@
     }
     #contact .logo-img {
         max-height: 40px;
+    }
+}
+
+#contact .parcours-video {
+    margin-left: 60px;
+}
+@media (max-width: 1030px) {
+    #contact .parcours-video {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+// Mobile : vidéo et boutons centrés
+@media (max-width: 768px) {
+    #contact .buttons-container,
+    #contact .social-buttons {
+        justify-content: center;
     }
 }

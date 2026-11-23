@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="android-chrome-192x192" href="/assets/images/android-chrome-192x192.png">
     <link rel="stylesheet" href="/assets/css/main.css">
+    {% if page.stylesheets %}
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    {% for css in page.stylesheets %}<link rel="stylesheet" href="{{ css }}">
+    {% endfor %}{% endif %}
     <script src="/assets/js/main.js"></script>
     <meta name="robots" content=" index, follow">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1V2DX05WV"></script>

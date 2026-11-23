@@ -1,0 +1,97 @@
+// Pages « image de marque » (AI2H, Serjaq, Airplum).
+// Le socle est commun ; chaque marque définit ses variables (--b-*) et ses tuiles dans brand-<slug>.scss.
+// Polices des marques, auto-hébergées (chargées seulement sur les pages qui les utilisent).
+@font-face {
+    font-family: 'Bagel Fat One';
+    src: url('/assets/fonts/brands/BagelFatOne-400.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/brands/Lato-300.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/brands/Lato-400.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/brands/Lato-700.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Kaushan Script';
+    src: url('/assets/fonts/brands/KaushanScript-400.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Overpass';
+    src: url('/assets/fonts/brands/Overpass-variable.woff2') format('woff2');
+    font-weight: 300 900;
+    font-display: swap;
+}
+
+.brand {
+    padding: ($nav-height + 20px) 0 40px;
+    background: var(--b-page);
+    color: var(--b-ink);
+    font-family: var(--b-text);
+    line-height: 1.4;
+}
+.brand *,
+.brand *::before,
+.brand *::after {
+    box-sizing: border-box;
+}
+// Le site impose Libre Bodoni / Montserrat : on laisse la marque reprendre la main.
+.brand h1, .brand h2, .brand h3, .brand p, .brand a, .brand span, .brand li, .brand div {
+    font-family: inherit;
+}
+.brand h1, .brand h2, .brand h3, .brand p {
+    margin: 0;
+    font-size: inherit;
+}
+.brand a {
+    color: inherit;
+}
+// Le <footer> du site est noir et pleine largeur : on neutralise ces réglages pour les pieds de planche.
+.brand footer {
+    width: auto;
+    min-height: 0;
+    background-color: transparent;
+    z-index: auto;
+}
+.brand footer a {
+    margin: 0;
+}
+.brand-back {
+    max-width: var(--b-max);
+    margin: 0 auto;
+    padding: 4px var(--b-pad) 0;
+}
+.brand-back a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--b-ink);
+}
+.brand-back a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 1200px) {
+    .brand {
+        padding-bottom: 24px;
+    }
+}

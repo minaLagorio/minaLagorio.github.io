@@ -7,6 +7,11 @@
 @import "base";
 @import "creations";
 @import "contact";
+@import "brand";
+@import "brand-ai2h";
+@import "brand-serjaq";
+@import "brand-airplum";
+@import "projets";
 @import "accompagnements";
 @import "legals";
 @import "blog";
@@ -18,7 +23,7 @@
 
 #hero {
     display: flex;
-    background-color: $color-gray;
+    background-color: $color-bg-c;
     min-height: 200px;
     padding: 30px $h-gutter;
     padding-top: 120px;
@@ -26,6 +31,15 @@
 #hero img {
     display: block;
     width: 500px;
+}
+#hero h1,
+#contact #title h1 {
+    word-spacing: 0.12em;
+}
+#hero h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
 }
 
 #hero-video {
@@ -63,6 +77,61 @@
 
 .logo-link {
     line-height: 100px;
+}
+
+/* Portrait rond (photo détourée par CSS) */
+#cta .bottom-content img.portrait,
+#contact .content .marina img.portrait {
+    padding: 0;
+    margin: 5px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Vidéo YouTube verticale (Short) */
+.video-frame {
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
+    background-color: #000;
+}
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* Accueil : liste des accompagnements à gauche, vidéo à droite */
+#accompagnements-apercu .apercu-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+}
+#accompagnements-apercu .apercu-liste {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+#accompagnements-apercu .apercu-video {
+    flex: 0 0 auto;
+}
+
+/* Signature sous le nom (accueil, contact) */
+.baseline {
+    margin: 0 0 16px;
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+#contact .parcours-video {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
 }
 
 #cta {
@@ -357,6 +426,15 @@ i.icon.malt {
 }
 
 @media (max-width: 1030px) {
+    #accompagnements-apercu .apercu-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+    }
+    #accompagnements-apercu .apercu-video {
+        display: flex;
+        justify-content: center;
+    }
     .container-row:not(.responsive-row) {
         flex-direction: column;
     }

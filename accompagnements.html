@@ -7,31 +7,31 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
 
 <!-- 2. En-tête -->
 <section class="entete" aria-labelledby="titre-page">
-  <div class="conteneur entete__grille">
+  <div class="conteneur">
     <div class="entete__texte">
       <span class="entete__filet" aria-hidden="true"></span>
       <h1 id="titre-page">Accompagnements</h1>
       <p class="entete__sous-titre">Clarifier votre marque, structurer votre offre, outiller vos équipes.</p>
-      <div class="groupe-btn">
-        <a class="button" href="/contact">Me contacter</a>
-        <a class="button outline" href="#accompagnements">Voir les accompagnements</a>
-      </div>
     </div>
-    <svg class="cible" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1.2"></circle><path d="M20 1v38M1 20h38" stroke="currentColor" stroke-width="1.2"></path></svg>
-  </div>
-</section>
-
-<!-- 3. Introduction -->
-<section class="intro" aria-label="Introduction">
-  <div class="conteneur">
-    <p>J'accompagne les entreprises dans la construction d'une marque <strong>claire, cohérente et durable</strong>. Mon regard associe <strong>stratégie de marque</strong> et <strong>culture visuelle</strong> : ce qui se décide en réunion doit se retrouver, intact, sur chaque support. Selon votre besoin, j'interviens <strong>ponctuellement ou dans la durée</strong>.</p>
+    <nav class="accomp-nav" aria-label="Les prestations">
+      <button type="button" class="accomp-nav__toggle" aria-expanded="false" aria-controls="accomp-nav-list">
+        <span class="accomp-nav__label">Prestations</span>
+      </button>
+      <ul id="accomp-nav-list" class="accomp-nav__list">
+        <li><a href="#audit">Audit &amp; diagnostic</a></li>
+        <li><a href="#creation">Création de marque</a></li>
+        <li><a href="#mensuel">Accompagnement mensuel</a></li>
+        <li><a href="#ia">Transition IA</a></li>
+        <li><a href="#formations">Formations</a></li>
+      </ul>
+    </nav>
   </div>
 </section>
 
 <!-- 4. Les cinq accompagnements -->
 <div id="accompagnements">
 
-<section class="offre offre--bleu offre--n" aria-labelledby="offre-1">
+<section class="offre offre--bleu offre--n" id="audit" aria-labelledby="offre-1">
   <div class="conteneur offre__grille">
     <div class="offre__entete">
       <p class="offre__numero" aria-hidden="true">01</p>
@@ -56,7 +56,7 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
   </div>
 </section>
 
-<section class="offre offre--blanc offre--m" aria-labelledby="offre-2">
+<section class="offre offre--blanc offre--m" id="creation" aria-labelledby="offre-2">
   <div class="conteneur offre__grille">
     <div class="offre__entete">
       <p class="offre__numero" aria-hidden="true">02</p>
@@ -83,7 +83,7 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
   </div>
 </section>
 
-<section class="offre offre--creme offre--n" aria-labelledby="offre-3">
+<section class="offre offre--creme offre--n" id="mensuel" aria-labelledby="offre-3">
   <div class="conteneur offre__grille">
     <div class="offre__entete">
       <p class="offre__numero" aria-hidden="true">03</p>
@@ -120,7 +120,7 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
   </div>
 </section>
 
-<section class="offre offre--gris offre--n" aria-labelledby="offre-4">
+<section class="offre offre--gris offre--n" id="ia" aria-labelledby="offre-4">
   <div class="conteneur offre__grille">
     <div class="offre__entete">
       <p class="offre__numero" aria-hidden="true">04</p>
@@ -146,7 +146,7 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
   </div>
 </section>
 
-<section class="offre offre--blanc offre--c" aria-labelledby="offre-5">
+<section class="offre offre--blanc offre--c" id="formations" aria-labelledby="offre-5">
   <div class="conteneur offre__grille">
     <div class="offre__entete">
       <p class="offre__numero" aria-hidden="true">05</p>
@@ -171,6 +171,13 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
 </section>
 
 </div>
+
+<!-- 5. Introduction (sous la liste des offres) -->
+<section class="intro" aria-label="Introduction">
+  <div class="conteneur">
+    <p>J'accompagne les entreprises dans la construction d'une marque <strong>claire, cohérente et durable</strong>. Mon regard associe <strong>stratégie de marque</strong> et <strong>culture visuelle</strong> : ce qui se décide en réunion doit se retrouver, intact, sur chaque support. Selon votre besoin, j'interviens <strong>ponctuellement ou dans la durée</strong>.</p>
+  </div>
+</section>
 
 <!-- 5. Comment ça se passe -->
 <section class="etapes" aria-labelledby="titre-etapes">
@@ -232,7 +239,7 @@ description: Audit de marque, plateforme de marque, accompagnement stratégique,
       </details>
       <details class="faq__item">
         <summary class="faq__question">Réalisez-vous encore des créations ?<span class="faq__signe" aria-hidden="true"></span></summary>
-        <p class="faq__reponse">Je me concentre sur la stratégie. J'accepte ponctuellement certaines créations, ou des missions en sous-traitance pour des agences dont c'est le cœur de métier. Mes réalisations sont visibles dans la rubrique <a href="/creations">Projets</a>.</p>
+        <p class="faq__reponse">Je me concentre sur la stratégie. J'accepte ponctuellement certaines créations, ou des missions en sous-traitance pour des agences dont c'est le cœur de métier. Mes réalisations sont visibles dans la rubrique <a href="/creations/">Projets</a>.</p>
       </details>
     </div>
   </div>
